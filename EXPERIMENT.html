@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+*{
+  padding:0px;
+  margin:0px;
+}
+header {
+  text-align:center;
+  z-index:1;
+	position: fixed;
+}
+.navbutton{
+  background:#24252a;
+  height:80px;
+  width:1300px;;
+}
+
+.about{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.current{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.calendar{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.education{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.journey{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+display:inline-flex;
+transition:all 0.3s ease 0s;
+text-align:center;
+}
+
+.navbutton ul{
+display:inline-flex;
+}
+.current{
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+  padding:15px;
+  height:50px;
+  line-height:10px;
+}
+nav a:hover{
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+  text-decoration:none;
+  height:50px;
+}
+ .dropdown:hover .dropdown-content{
+   display:block;
+   position:absolute;
+   height:190px;
+   width:160px;
+ }
+ .dropdown-content{
+   display:none;
+   background:#24252a;
+   border:1px solid white;
+   list-style-type:none;
+
+ }
+
+ div li{
+   padding:15px;
+ }
+ div li a{
+   color:white;
+   text-decoration: none;
+ }
+ .dropbutton{
+   border-bottom:1px solid white;
+   padding:5px;
+   transition:all 0.3s ease 0s;
+   height:50px;
+   margin:1px;
+ }
+
+.title p{
+  text-align:center;
+  position:relative;
+  top:110px;
+  font-size:50px;
+  font-family:fantasy;
+}
+body{
+  background:linear-gradient(#a6c0fe,#f68084);
+}
+.login{
+  position:relative;
+  top:100px;
+  left:150px;
+  height:410px;
+  width:400px;
+  background:linear-gradient(#84fab0,#8fd3f4);
+  border-radius:10px;
+  padding:10px;
+}
+.signin{
+  position:relative;
+  bottom:310px;
+  left:700px;
+  height:410px;
+  width:400px;
+  background:linear-gradient(#fbc2eb,#a6c1ee);
+  border-radius:10px;
+  padding:10px;
+}
+
+.form-group{
+  position:relative;
+  margin:30px 0;
+}
+.form-groupinput{
+  width:100%;
+  padding:0 5px;
+  height:40px;
+  font-size:16px;
+  border:none;
+  border-bottom: 2px solid grey;
+}
+.submit{
+  border-radius:5px;
+  color:black;
+  background-color:white;
+  width:50px;
+}
+.form-control{
+  margin-bottom:10px;
+}
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body>
+  <header>
+ <nav class="navbutton">
+ <ul>
+   <a class="about" href="Main.html">About</a>
+   <a class="education" href="#" >Education</a>
+   <div class="dropdown">
+   <a class="journey" href="Journey.html">Journey</a>
+   <div class="dropdown-content">
+ <li><a class="dropbutton" href="#">Calculate BMI</a></li>
+   <li><a class="dropbutton" href="#">Workout Guides</a></li>
+   <li><a class='dropbutton' href="#">Game</a></li>
+   </div>
+ </div>
+   <a class="calendar"href="">Calendar</a>
+   <a class="current" href="#">Sign in/Log in</a>
+
+ </ul>
+</nav>
+</header>
+<body>
+ <div class="title">
+   <p>Join Us Now!</p>
+   </div>
+   <!--LOGIN FORM-->
+<div class="login">
+<div class="container">
+  <form action="/action_page.php" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+   <!--LOGIN FORM-->
+   <div class="signin">
+   <div class="container">
+     <form action="/action_page.php" class="needs-validation" novalidate>
+       <div class="form-group">
+         <label for="uname">Username:</label>
+         <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+         <div class="valid-feedback">Valid.</div>
+         <div class="invalid-feedback">Please fill out this field.</div>
+       </div>
+       <div class="form-group">
+         <label for="pwd">Password:</label>
+         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+         <div class="valid-feedback">Valid.</div>
+         <div class="invalid-feedback">Please fill out this field.</div>
+       </div>
+       <div class="form-group form-check">
+         <label class="form-check-label">
+           <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+           <div class="valid-feedback">Valid.</div>
+           <div class="invalid-feedback">Check this checkbox to continue.</div>
+         </label>
+       </div>
+       <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+   </div>
+   </div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html lan="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+*{
+  padding:0px;
+  margin:0px;
+}
+header {
+  text-align:center;
+	height: 100px;
+	width: 100%;
+  z-index:1;
+	position: fixed;
+}
+.navbar{
+  background:#24252a;
+}
+.about{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.current{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.calendar{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.education{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.journey{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+display:inline-flex;
+transition:all 0.3s ease 0s;
+text-align:center;
+}
+.navbar ul{
+display:inline-flex;
+}
+.current{
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+  padding:15px;
+}
+nav a:hover{
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+}
+ .dropdown:hover .dropdown-content{
+    display:block;
+   position:absolute;
+ }
+.dropdown-content{
+  display:none;
+  background:#24252a;
+  border:1px solid white;
+  padding:5px;
+  list-style-type:none;
+}
+div li{
+  padding:20px;
+}
+div a{
+  color:white;
+  text-decoration: none;
+}
+.calculator{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.guide{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.game{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.title p{
+  text-align:center;
+  position:relative;
+  top:110px;
+  font-size:50px;
+  font-family:fantasy;
+}
+.login{
+  top:180px;
+  left:200px;
+  position:absolute;
+  height:320px;
+  width:350px;
+  background:white;
+  border-radius:10px;
+  padding:10px;
+}
+.signup{
+  top:2px;
+  left:500px;
+  position:absolute;
+  height:320px;
+  width:350px;
+  background:white;
+  border-radius:10px;
+  padding:10px;
+}
+.login h1{
+  text-align:center;
+  padding:0 0 20px 0;
+  border-bottom: 1px solid silver;
+}
+.signup h1{
+  text-align:center;
+  padding:0 0 20px 0;
+  border-bottom: 1px solid silver;
+}
+body{
+  background:linear-gradient(red,orange);
+  height:100vh; /*without this the background color gone*/
+}
+.field{
+  position:relative;
+  margin:30px 0;
+}
+.field input{
+  width:100%;
+  padding:0 5px;
+  height:40px;
+  font-size:16px;
+  border:none;
+  border-bottom: 2px solid grey;
+}
+.submit{
+  border-radius:5px;
+  color:black;
+  background-color:white;
+  width:50px;
+}
+.input{
+  margin-bottom:10px;
+}
+</style>
+</head>
+  <header>
+  <nav class="navbar">
+  <ul>
+    <a class="about" href="Main.html">About</a>
+    <a class="education" href="#" >Education</a>
+    <div class="dropdown">
+    <a class="journey" href="Journey.html">Journey</a>
+    <div class="dropdown-content">
+  <li><a class="calculator" href="#">Calculate BMI</a></li>
+    <li><a class="guide" href="#">Workout Guides</a></li>
+    <li><a class='game' href="#">Game</a></li>
+    </div>
+  </div>
+    <a class="calendar"href="">Calendar</a>
+    <a class="current" href="#">Sign in/Log in</a>
+  </ul>
+</nav>
+</header>
+<body>
+  <div class="title">
+    <p>Join Us Now!</p>
+    </div>
+<div class="login">
+  <h1>Login</h1>
+  <form method = "post">
+    <div class="field">
+    <label>Username</label>
+    <input class="input" type="text id="username" required" />
+    <label>Password</label>
+    <input type="password" />
+    </div>
+      <input class="submit" type="submit" value="Login" />
+      </form>
+
+        <div class="signup">
+          <h1>Sign up</h1>
+          <form method = "post">
+            <div class="field">
+            <label>Create username</label>
+            <input class="input" type="text id="username" required" />
+            <label>Create Password</label>
+            <input type="password" />
+            </div>
+              <input class="submit" type="submit" value="Login" />
+        </div>
+    </form>
+    </div>
+</body>

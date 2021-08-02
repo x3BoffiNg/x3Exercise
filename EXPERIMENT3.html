@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /*box-sizing: border-box;*/
+        font-family: "Fantasy", sans-serif;
+      }
+      header {
+        text-align:center;
+      	height: 100%;
+      	width: 100%;;
+        z-index:1;
+      	position:fixed;
+      }
+      .navbar{
+        background:#24252a;
+        height:70px;
+      }
+      .about{
+      text-decoration:none;
+      color:white;
+      font-family:serif,"Stencil Std";
+      margin:15px;
+      padding:15px;
+      width:120px;
+      transition:all 0.3s ease 0s;
+      }
+      .current{
+        text-decoration:none;
+        color:white;
+        font-family:serif,"Stencil Std";
+        margin:15px;
+        padding:15px;
+        width:150px;
+        background:linear-gradient(red, yellow);
+        border-radius:3px;
+        padding:15px;
+      }
+      .journey{
+      text-decoration:none;
+      color:white;
+      font-family:serif,"Stencil Std";
+      margin:15px;
+      padding:15px;
+      width:120px;
+      transition:all 0.3s ease 0s;
+      top:30px;
+      position:relative;
+      }
+      .account{
+      text-decoration:none;
+      color:white;
+      font-family:serif,"Stencil Std";
+      margin:15px;
+      padding:15px;
+      width:120px;
+      transition:all 0.3s ease 0s;
+      }
+      .education{
+      text-decoration:none;
+      color:white;
+      font-family:serif,"Stencil Std";
+      margin:15px;
+      padding:15px;
+      width:120px;
+      display:inline-flex;
+      transition:all 0.3s ease 0s;
+      text-align:center;
+      }
+      .navbar ul{
+      display:inline-flex;
+      }
+
+      nav a:hover{
+        background:linear-gradient(red, yellow);
+        border-radius:3px;
+        height:30px;
+      }
+       .dropdown:hover .dropdown-content{
+         display:block;
+         position:absolute;
+       }
+      .dropdown-content{
+        display:none;
+        background:#24252a;
+        border:1px solid white;
+        padding:5px;
+        list-style-type:none;
+        position:relative;
+        top:70px;
+      }
+      div li{
+        padding:20px;
+      }
+      div a{
+        color:white;
+        text-decoration: none;
+      }
+      .calculator{
+        border-bottom:1px solid white;
+        padding:20px;
+        transition:all 0.3s ease 0s;
+      }
+      .guide{
+        border-bottom:1px solid white;
+        padding:20px;
+        transition:all 0.3s ease 0s;
+      }
+      .game{
+        border-bottom:1px solid white;
+        padding:20px;
+        transition:all 0.3s ease 0s;
+      }
+
+      .background {
+        height:100%;
+        width:100%;/*remember what it does*/
+        position: fixed; /*remember what it does*/
+        /* top:100%*/
+        background-image:url(images/trainers.jpg);
+        background-size:cover;
+        background-position:center;
+       /*remember what it does*/
+      }
+
+        .content-area {
+        	position: relative; /*remember what it does*/
+          padding:40px;
+        	top:431px; /*remember what it does*/
+        	background:linear-gradient(65deg, #231557 0%, #44107A 39%, #FF1361 67%, #00FA9A 110%);
+          /*increase 1500 to make webpage longer*/
+        	height: 2100px;
+          color:white
+        }
+      .content-area p{
+        font-family:"Stencil Std", "fantasy";
+        font-size:30px;
+      }
+      .background h2{
+        font-size:70px;
+        position:absolute;
+        top:230px;
+        left:95px;
+       /* Create the gradient. */
+       background-image: linear-gradient(red,yellow);
+       /* Set the background size and repeat properties. */
+       background-size: 100%;
+       background-repeat: repeat;
+       /* Use the text as a mask for the background. */
+       /* This will show the gradient as a text color rather than element bg. */
+       -webkit-background-clip: text; /*without this it will be the background color*/
+       -webkit-text-fill-color: transparent; /*without this the text color will be black*/
+       /*-moz-background-clip: text;   dunno for what
+       -moz-text-fill-color: transparent;*/
+       -webkit-text-stroke: 1px #282828; /*without this text will be slightly blur*/
+      	text-shadow: 5px 1px 0px #282828;
+        font-family:"Stencil Std", "fantasy";
+        font-weight:900;
+        overflow:hidden;
+        white-space:nowrap;
+        animation:text 13s steps(31);
+      }
+      @keyframes text{
+        0%{
+          width:0ch;
+        }
+        50%{
+          width:31ch;
+        }
+      }
+      html {
+        font-size: 62.5%;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: #12121f;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .calendar {
+        width: 45rem;
+        height: 52rem;
+        background-color: #222227;
+        box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+      }
+
+      .month {
+        width: 100%;
+        height: 12rem;
+        background-color: #167e56;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        text-align: center;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+      }
+
+      .month i {
+        font-size: 2.5rem;
+        cursor: pointer;
+      }
+
+      .month h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .month p {
+        font-size: 1.6rem;
+      }
+
+      .weekdays {
+        width: 100%;
+        height: 5rem;
+        padding: 0 0.4rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .weekdays div {
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+        width: calc(44.2rem / 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+      }
+
+      .days {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.2rem;
+      }
+
+      .days div {
+        font-size: 1.4rem;
+        margin: 0.3rem;
+        width: calc(40.2rem / 7);
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+      }
+
+      .days div:hover:not(.today) {
+        background-color: #262626;
+        border: 0.2rem solid #777;
+        cursor: pointer;
+      }
+
+      .prev-date,
+      .next-date {
+        opacity: 0.5;
+      }
+
+      .today {
+        background-color: #167e56;
+      }
+
+</style>
+  </head>
+  <body>
+    <header>
+    <nav class="navbar">
+    <ul>
+      <a class="about" href="Main.html">About</a>
+      <a class="education" href="Education.html" >Education</a>
+      <div class="dropdown">
+      <a class="journey" href="Journey.html">Journey</a>
+      <div class="dropdown-content">
+    <li><a class="calculator" href="#">Calculate BMI</a></li>
+      <li><a class="guide" href="#">Workout Guides</a></li>
+      <li><a class='game' href="#">Game</a></li>
+      </div>
+    </div>
+      <a class="current"href="#">Online Class</a>
+      <a class="account" href="Account.html">Sign in/Log in</a>
+    </ul>
+  </nav>
+  </header>
+  <!--fixed background-->
+  <div class="background">
+    <h2>Sign-Up For Online Classes Now!</h2>
+  </div>
+  <!--calculator-->
+  <div class="content-area">
+
+      <div class="calendar">
+        <div class="month">
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1>May</h1>
+            <p>Fri May 29,2021</p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="days">
+          <div class="prev-date">26</div>
+          <div class="prev-date">27</div>
+          <div class="prev-date">28</div>
+          <div class="prev-date">29</div>
+          <div class="prev-date">30</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+          <div>27</div>
+          <div>28</div>
+          <div class="today">29</div>
+          <div>30</div>
+          <div>31</div>
+          <div class="next-date">1</div>
+          <div class="next-date">2</div>
+          <div class="next-date">3</div>
+          <div class="next-date">4</div>
+          <div class="next-date">5</div>
+          <div class="next-date">6</div>
+          </div>
+        <div class="days"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

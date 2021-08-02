@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Fantasy", sans-serif;
+  }
+  header {
+    text-align:center;
+    width: 100%;;
+    z-index:1;
+    position:fixed;
+
+  }
+  .navbar{
+    background:#24252a;
+    height:70px;
+  }
+  .about{
+    text-decoration:none;
+    color:white;
+    font-family:serif,"Stencil Std";
+    margin:15px;
+    padding:15px;
+    width:120px;
+    transition:all 0.3s ease 0s;
+    height:20px;
+  }
+  .onlineClass{
+    text-decoration:none;
+    color:white;
+    font-family:serif,"Stencil Std";
+    margin:15px;
+    padding:15px;
+    width:150px;
+    border-radius:3px;
+    padding:15px;
+    height:20px;
+  }
+  .journey{
+    text-decoration:none;
+    color:white;
+    font-family:serif,"Stencil Std";
+    margin:15px;
+    padding:15px;
+    width:120px;
+    transition:all 0.3s ease 0s;
+    top:30px;
+    position:relative;
+    height:20px;
+  }
+  .account{
+    text-decoration:none;
+    color:white;
+    font-family:serif,"Stencil Std";
+    margin:15px;
+    padding:15px;
+    width:120px;
+    transition:all 0.3s ease 0s;
+    line-height:15px;
+    height:20px;
+  }
+  .education{
+    text-decoration:none;
+    color:white;
+    font-family:serif,"Stencil Std";
+    margin:15px;
+    padding:15px;
+    width:120px;
+    display:inline-flex;
+    transition:all 0.3s ease 0s;
+    text-align:center;
+    height:20px;
+  }
+  .navbar ul{
+    display:inline-flex;
+  }
+  nav a{
+    font-size:16px;
+  }
+  nav a:hover{
+    background:linear-gradient(red, yellow);
+    border-radius:3px;
+
+  }
+   .dropdown:hover .dropdown-content{
+     display:block;
+     position:absolute;
+   }
+  .dropdown-content{
+    display:none;
+    background:#24252a;
+    border:1px solid white;
+    padding:5px;
+    list-style-type:none;
+    position:relative;
+    top:70px;
+  }
+  div li{
+    padding:20px;
+  }
+  div a{
+    color:white;
+    text-decoration: none;
+  }
+  .calculator{
+    border-bottom:1px solid white;
+    padding:20px;
+    transition:all 0.3s ease 0s;
+  }
+  .guide{
+    border-bottom:1px solid white;
+    padding:20px;
+    transition:all 0.3s ease 0s;
+  }
+  .game{
+    border-bottom:1px solid white;
+    padding:20px;
+    transition:all 0.3s ease 0s;
+  }
+
+  body{
+    background:linear-gradient(#a6c0fe,#f68084);
+    height:1080px;
+  }
+
+  .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+
+  .container {
+    background:linear-gradient(#fbc2eb,#a6c1ee);
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    width:800px;
+    position:relative;
+    top:100px;
+    left:170px;
+
+  }
+
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+  }
+
+  a {
+    color: #2196F3;
+  }
+
+  hr {
+    border: 1px solid lightgrey;
+  }
+
+  span.price {
+    float: right;
+    color: grey;
+  }
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+/*POP UP*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+  </head>
+  <body>
+    <header>
+    <nav class="navbar">
+    <ul>
+      <a class="about" href="Main.html">About</a>
+      <a class="education" href="Education.html" >Education</a>
+      <div class="dropdown">
+      <a class="journey" href="Journey.html">Journey</a>
+      <div class="dropdown-content">
+    <li><a class="calculator" href="#">Calculate BMI</a></li>
+      <li><a class="guide" href="#">Workout Guides</a></li>
+      <li><a class='game' href="#">Game</a></li>
+      </div>
+    </div>
+      <a class="onlineClass"href="OnlineClass">Book Now</a>
+      <a class="account" href="Account.html">Sign in/Log in</a>
+    </ul>
+  </nav>
+  </header>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+
+        </div>
+
+      </div>
+
+      <form>
+
+          <div class="col-50">
+            <h3>Selection of class</h3>
+            <br />
+            <label for="classCategory">Category of the class you wish to sign up for :</label>
+            <input type="text" id="classCategory" name="classCategory" placeholder="Easy/Intermediate/Hard">
+            <label for="classType">Category of the class you wish to sign up for :</label>
+            <input type="text" id="classType" name="classType" placeholder="Arms/Chest/Abdomen/Leg">
+            <label for="date">Date of the online class you want to sign up for :</label>
+            <input type="text" id="date" name="date" placeholder="dd-mm-yyyy">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card :</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number :</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month :</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Expiry Year :</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+            <label>
+              <input type="checkbox" checked="checked" name="sameadr"> Confirm payment
+            </label>  <!-- Trigger/Open The Modal -->
+            <button  id="btn">Pay</button>
+            <!-- The Modal -->
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    <script src="script.js">
+    var modal = document.getElementById("myModal");
+    // Get the button that opens the modal
+    var button = document.getElementByClass("btn");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks the button, open the modal
+
+    // FORM DATA SUBMISSION PAGE //
+    function result(){
+      var category = document.getElementById("classCategory").value;
+      var area = document.getElementById("classType").value;
+      var day = document.getElementById("date").value;
+      var cardName = document.getElementById("cname").value;
+      var cardnum = document.getElementById("ccum").value;
+      var cardExpMonth = document.getElementById("expmonth").value;
+      var cardExpnYear = document.getElementById("expyear").value;
+      var cvv = document.getElementById("cvv").value;
+
+      document.write("You have signed up for: "+category+" targetted area is "+area+" on "+day);
+      "<br />"
+      document.write("Your card name : "+cardName);
+      "<br />"
+      document.write("Your card number is : "+cardnum);
+      "<br />"
+      document.write("Your card expiry date is : "+cardExpMonth+"/"+cardExpYear);
+      "<br />"
+      document.write("Your card cvv is: "+cvv);
+    }
+
+
+button.onclick =  function() {
+  modal.style.display = "block";
+}
+    // When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+  </body>
+</html>

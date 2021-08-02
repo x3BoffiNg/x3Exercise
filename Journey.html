@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<html lan="en">
+<head>
+<meta charset="utf-8">
+<style>
+*{
+  padding:0px;
+  margin:0px;
+}
+header {
+  text-align:center;
+	height: 100px;
+	width: 100%;
+  z-index:1;
+	position:fixed;
+}
+.navbar{
+  background:#24252a;
+}
+.about{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.current{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:150px;
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+  padding:15px;
+  position:relative;
+  top:30px;
+}
+.classes{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.account{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.education{
+text-decoration:none;
+color:white;
+font-family:serif,"Stencil Std";
+margin:15px;
+padding:15px;
+width:120px;
+display:inline-flex;
+transition:all 0.3s ease 0s;
+text-align:center;
+}
+.navbar ul{
+display:inline-flex;
+}
+
+nav a:hover{
+  background:linear-gradient(red, yellow);;
+  border-radius:3px;
+}
+ .dropdown:hover .dropdown-content{
+   display:block;
+   position:absolute;
+ }
+.dropdown-content{
+  display:none;
+  background:#24252a;
+  border:1px solid white;
+  padding:5px;
+  list-style-type:none;
+  position:relative;
+  top:80px;
+}
+div li{
+  padding:20px;
+}
+div a{
+  color:white;
+  text-decoration: none;
+}
+.calculator{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.guide{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.game{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+
+.background {
+  height:100%;
+  width:100%;/*remember what it does*/
+  position: fixed; /*remember what it does*/
+  /* top:100%*/
+  background-image:url(images/girlworkout.jpg);
+  background-size:cover;
+  background-position:center;
+ /*remember what it does*/
+}
+
+.content-area {
+	position: relative; /*remember what it does*/
+  padding:40px;
+	top:431px; /*remember what it does*/
+  background: linear-gradient(328deg,#ff8489 74%,#d5adc8 0%);
+  /*increase 1500 to make webpage longer*/
+	height: 2100px;
+  text-align:center;
+  color:white
+}
+.content-area p{
+  font-family:"Stencil Std", "fantasy";
+  font-size:30px;
+}
+.background h2{
+  font-size:80px;
+  position:absolute;
+  top:190px;
+  left:250px;
+ /* Create the gradient. */
+ background-image: linear-gradient(#a6c0fe,#f68084);
+ /* Set the background size and repeat properties. */
+ background-size: 100%;
+ background-repeat: repeat;
+ /* Use the text as a mask for the background. */
+ /* This will show the gradient as a text color rather than element bg. */
+ -webkit-background-clip: text; /*without this it will be the background color*/
+ -webkit-text-fill-color: transparent; /*without this the text color will be black*/
+ /*-moz-background-clip: text;   dunno for what
+ -moz-text-fill-color: transparent;*/
+ -webkit-text-stroke: 1px #282828; /*without this text will be slightly blur*/
+	text-shadow: 5px 1px 0px #282828;
+  font-family:"Stencil Std", "fantasy";
+  font-weight:900;
+  overflow:hidden;
+  white-space:nowrap;
+  animation:text 13s steps(23);
+}
+@keyframes text{
+  0%{
+    width:0ch;
+  }
+  50%{
+    width:23ch;
+  }
+}
+#workoutguide{
+  font-size:25px;
+}
+table li{
+  padding:5px;
+  list-style-position:inside;
+}
+#height{
+  margin:10px;
+  border-radius:5px;
+  height:25px;
+}
+#weight{
+  margin:10px;
+  border-radius:5px;
+  height:25px;
+}
+#button{
+  margin:10px;
+  width:200px;
+  height:30px;
+  border-radius:5px;
+  border:1px solid #24252a;
+  background:linear-gradient(red, yellow);
+}
+#recommended_workout{
+  font-size:20px;
+  color:white;
+  font-family:"Fantasy";
+}
+.BMIcalculation{
+  position:relative;
+  right:300px;
+  top:100px;
+}
+.tableDesign{
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius:5px;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+  left:300px;
+  bottom:140px;
+
+}
+thead,tr{
+  background-color: 74%,#d5adc8;
+  color: #ffffff;
+  text-align: left;
+}
+th,td {
+  padding: 12px 15px;
+}
+.tableDesign tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.tableDesign tbody tr:nth-of-type(even) {
+    background-color:#ff8489;
+}
+
+.tableDesign tbody tr:last-of-type { /*allows you to target the last occurence of an element within its container.*/
+    border-bottom: 2px solid #009879;
+}
+
+
+section{
+  display:inline-flex;
+}
+#easyguide{
+  text-align:center;
+  font-size:25px;
+  text-decoration:underline;
+}
+.chestguide ol{
+  display:inline-block;
+  list-style-position:inside;
+  width:220px;
+  text-align:left;
+}
+#chestguide{
+  margin:15px;
+  border-right:2px solid ;
+  border-left:2px solid ;
+  border-bottom:2px solid;
+  border-top:2px solid;
+	border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  height:450px;
+  text-align:center;
+  padding-top:5px;
+}
+
+.armguide ol{
+  display:inline-block;
+  list-style-position:inside;
+  width:220px;
+  text-align:left;
+}
+#armguide{
+  margin:15px;
+  border-right:2px solid ;
+  border-left:2px solid;
+  border-bottom:2px solid ;
+  border-top:2px solid ;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  height:450px;
+  text-align:center;
+  padding-top:5px;
+}
+
+.abdomenguide ol{
+  display:inline-block;
+  list-style-position:inside;
+  width:220px;
+  text-align:left;
+}
+#abdomenguide{
+  margin:15px;
+  border-right:2px solid ;
+  border-left:2px solid ;
+  border-bottom:2px solid;
+  border-top:2px solid;
+	border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  height:450px;
+  text-align:center;
+  padding-top:5px;
+}
+
+.legguide ol{
+  display:inline-block;
+  list-style-position:inside;
+  width:220px;
+  text-align:left;
+}
+#legguide{
+  margin:15px;
+  border-right:2px solid ;
+  border-left:2px solid ;
+  border-bottom:2px solid;
+  border-top:2px solid;
+	border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  height:450px;
+  text-align:center;
+  padding-top:5px;
+}
+hr{
+  border:1px solid #24252a
+}
+#button{
+  font-family:"Stencil Std", "fantasy";
+  font-size:15px;
+}
+</style>
+<script>
+function BMI()
+{
+  var weight = document.getElementById('weight').value;
+  var height = document.getElementById('height').value;
+  var result = weight/(height*height);
+  var bmi = result.toFixed(3);
+  document.getElementById('bmiresult').innerHTML = "Your BMI Is " + bmi;
+}
+
+</script>
+</head>
+<body>
+  <!--navigation buttons-->
+  <header>
+  <nav class="navbar">
+  <ul>
+    <a class="about" href="Main.html">About</a>
+    <a class="education" href="Education.html" >Education</a>
+    <div class="dropdown">
+    <a class="current" href="#">Journey</a>
+    <div class="dropdown-content">
+  <li><a class="calculator" href="#">Calculate BMI</a></li>
+    <li><a class="guide" href="#">Workout Guides</a></li>
+    <li><a class='game' href="#">Game</a></li>
+    </div>
+  </div>
+    <a class="classes"href="OnlineClass.html">Book Now</a>
+    <a class="account" href="Account.html">Sign in/Log in</a>
+  </ul>
+</nav>
+</header>
+<!--fixed background-->
+<div class="background">
+  <h2>Start Your Journey Now!</h2>
+</div>
+<!--calculator-->
+<div class="content-area">
+<div class="BMIcalculation">
+
+  <p>Calculate Your BMI Now!</p>
+Enter Your Weight (kg): <input type="number" id="weight" />
+<br />
+Enter Your Height (m): <input type="number" id="height" />
+<br />
+<button id="button" onclick="BMI()">Calculate BMI</button>
+<br />
+<p id='bmiresult'></p>
+</div>
+
+<!--table-->
+
+<table class="tableDesign" border="1">
+  <caption id="recommended_workout">
+    Find Out Your Recommended Type Of Workout
+  </caption>
+  <tr><th>BMI range</th><th>Category</th><th>Recommended Workout Type</th></tr>
+  <tr><td>Below 18.5</td><td>Underweight</td><td>Intermediate</td></tr>
+  <tr><td>18.5 to 24.9</td><td>Healthy Weight</td><td>Advamce/Intermediate</td></tr>
+    <tr><td>25.0 to 29.9</td><td>Overweight</td><td>Easy/Intermediate</td></tr>
+      <tr><td>Above 30.0</td><td>Obese</td><td>Easy</td></tr>
+</table>
+<br />
+<hr />
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+
+
+<!--Workout Guides EASY-->
+<section>
+  <article class="chestguide">
+    <h2>Chest</h2>
+    <ol id="chestguide">
+      <p id="easyguide">Easy</p>
+<li>Standard Push-Up x8</li><li>Decline Push-Up x8</li><li>Plyometric Push-Up x8</li><li>Wide Push-Up x5</li><li>Shuffle Push-Up x10</li><li>One Leg Push-Up x10</li><li>Spiderman Push-Up x20</li>
+    </ol>
+  </article>
+
+  <article class="armguide">
+    <h2>Arm</h2>
+    <ol id="armguide">
+      <p id="easyguide">Easy</p>
+      <li>Jumping Jacks 30sec</li><li>Triceps dip x12</li><li>Dynamic Chest x8</li><li>Alternating Hooks x12</li><li>Up-down Plank x10</li><li>Knee Push-Up x12</li><li>Chest Press Pulse x12</li></ol>
+  </article>
+
+  <article class="abdomenguide">
+    <h2>Abdomen</h2>
+    <ol id="abdomenguide">
+      <p id="easyguide">Easy</p>
+      <li>High Stepping 30sec</li><li>Mountain Climber x15</li><li>Reverse Crutches x12</li><li>Leg Raise x18</li><li>Heel Touch x20</li><li>Plank 30sec</li><li>Heels To Heaven</li></ol>
+  </article>
+  <article class="legguide">
+    <h2>Leg</h2>
+    <ol id="legguide">
+      <p id="easyguide">Easy</p>
+      <li>Squat</li><li>Lunges</li><li>Pistol Squat</li><li>Donkey Kick</li><li>Side Lunges</li><li>Calf raised</li><li>Glute Bridge</li></ol>
+    </article>
+</section>
+
+<!--Workout Guides Intermediate-->
+<section>
+  <article class="chestguide">
+    <br />
+    <ol id="chestguide">
+      <p id="easyguide">Intermediate</p>
+<li>Standard Push-Up x8</li><li>Decline Push-Up x8</li><li>Plyometric Push-Up x8</li><li>Wide Push-Up x5</li><li>Shuffle Push-Up x10</li><li>One Leg Push-Up x10</li><li>Spiderman Push-Up x20</li>
+    </ol>
+  </article>
+
+  <article class="armguide">
+    <br />
+    <ol id="armguide">
+      <p id="easyguide">Intermediate</p>
+      <li>Jumping Jacks 30sec</li><li>Triceps dip x12</li><li>Dynamic Chest x8</li><li>Alternating Hooks x12</li><li>Up-and-down Plank x10</li><li>Knee Push-Up x12</li><li>Chest Press Pulse x12</li></ol>
+  </article>
+
+  <article class="abdomenguide">
+    <br />
+    <ol id="abdomenguide">
+      <p id="easyguide">Intermediate</p>
+      <li>High Stepping 30sec</li><li>Mountain Climber x15</li><li>Reverse Crutches x12</li><li>Leg Raise x18</li><li>Heel Touch x20</li><li>Plank 30sec</li><li>Heels To Heaven</li></ol>
+  </article>
+  <article class="legguide">
+    <br />
+    <ol id="legguide">
+      <p id="easyguide">Intermediate</p>
+      <li>Squat</li><li>Lunges</li><li>Pistol Squat</li><li>Donkey Kick</li><li>Side Lunges</li><li>Calf raised</li><li>Glute Bridge</li></ol>
+    </article>
+</section>
+
+<!--Workout Guides HARD-->
+<section>
+  <article class="chestguide">
+    <br />
+    <ol id="chestguide">
+      <p id="easyguide">Hard</p>
+<li>Standard Push-Up x8</li><li>Decline Push-Up x8</li><li>Plyometric Push-Up x8</li><li>Wide Push-Up x5</li><li>Shuffle Push-Up x10</li><li>One Leg Push-Up x10</li><li>Spiderman Push-Up x20</li>
+    </ol>
+  </article>
+
+  <article class="armguide">
+    <br />
+    <ol id="armguide">
+      <p id="easyguide">Hard</p>
+      <li>Jumping Jacks 30sec</li><li>Triceps dip x12</li><li>Dynamic Chest x8</li><li>Alternating Hooks x12</li><li>Up-and-down Plank x10</li><li>Knee Push-Up x12</li><li>Chest Press Pulse x12</li></ol>
+  </article>
+
+  <article class="abdomenguide">
+    <br />
+    <ol id="abdomenguide">
+      <p id="easyguide">Hard</p>
+      <li>High Stepping 30sec</li><li>Mountain Climber x15</li><li>Reverse Crutches x12</li><li>Leg Raise x18</li><li>Heel Touch x20</li><li>Plank 30sec</li><li>Heels To Heaven</li></ol>
+  </article>
+  <article class="legguide">
+    <br />
+    <ol id="legguide">
+      <p id="easyguide">Hard</p>
+      <li>Squat</li><li>Lunges</li><li>Pistol Squat</li><li>Donkey Kick</li><li>Side Lunges</li><li>Calf raised</li><li>Glute Bridge</li></ol>
+    </article>
+</section>
+</div>
+</body>

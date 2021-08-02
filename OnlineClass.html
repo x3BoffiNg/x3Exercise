@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <header>
+    <nav class="navbar">
+    <ul>
+      <a class="about" href="Main.html">About</a>
+      <a class="education" href="Education.html" >Education</a>
+      <div class="dropdown">
+      <a class="journey" href="Journey.html">Journey</a>
+      <div class="dropdown-content">
+    <li><a class="calculator" href="#">Calculate BMI</a></li>
+      <li><a class="guide" href="#">Workout Guides</a></li>
+      <li><a class='game' href="#">Game</a></li>
+      </div>
+    </div>
+      <a class="current"href="#">Book Now</a>
+      <a class="account" href="Account.html">Sign in/Log in</a>
+    </ul>
+  </nav>
+  </header>
+  <!--fixed background-->
+  <div class="background">
+    <h2>Sign-Up For Online Classes Now!</h2>
+  </div>
+  <!--calculator-->
+  <div class="content-area">
+
+
+  <!--CALENDAR-->
+
+      <div class="calendar">
+        <div class="month">
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1>May</h1>
+            <p>Fri May 29,2021</p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="days">
+          <div class="prev-date">26</div>
+          <div class="prev-date">27</div>
+          <div class="prev-date">28</div>
+          <div class="prev-date">29</div>
+          <div class="prev-date">30</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+          <div>27</div>
+          <div>28</div>
+          <div class="today">29</div>
+          <div>30</div>
+          <div>31</div>
+          <div class="next-date">1</div>
+          <div class="next-date">2</div>
+          <div class="next-date">3</div>
+          <div class="next-date">4</div>
+          <div class="next-date">5</div>
+          <div class="next-date">6</div>
+          </div>
+        <div class="days"></div>
+      </div>
+<!--TABLE OF CLASSES-->
+
+<table class="tableClasses" border="1">
+  <caption id="recommended_workout">
+    Classes Available
+  </caption>
+  <tr><th>Category</th><th>Area Focused</th><th>Timings</th><th>Price</th><td>Book Here!</td></tr>
+  <!--EASY-->
+  <tr><td id="tableDay" rowspan="4">Easy</td><td>Arm</td><td>12.30-1.30pm</td><td>$12</td><td rowspan="4"><a href="Payment.html">Sign-Up Here</a></td></tr>
+  <tr><td>chest</td><td>2-3pm</td><td>$12</td></tr>
+    <tr><td>Abdomen</td><td>4-5pm</td><td>$15</td></tr>
+      <tr><td>Leg</td><td>6-7pm</td><td>$15</td></tr>
+          <!--Intermediate-->
+          <tr><td id="tableDay" rowspan="4">Intermediate</td><td>Arm</td><td>12.30-1.30pm</td><td>$12</td><td rowspan="4"><a href="Payment.html">Sign-Up Here</a></td></tr>
+          <tr><td>chest</td><td>2-3pm</td><td>$12</td></tr>
+            <tr><td>Abdomen</td><td>4-5pm</td><td>$15</td></tr>
+              <tr><td>Leg</td><td>6-7pm</td><td>$15</td></tr>
+                <!--HARD-->
+                  <tr><td id="tableDay" rowspan="4">Hardy</td><td>Arm</td><td>12.30-1.30pm</td><td>$12</td><td rowspan="4"><a href="Payment.html">Sign-Up Here</a></td></tr>
+                  <tr><td>chest</td><td>2-3pm</td><td>$12</td></tr>
+                    <tr><td>Abdomen</td><td>4-5pm</td><td>$15</td></tr>
+                      <tr><td>Leg</td><td>6-7pm</td><td>$15</td></tr>
+
+</table>
+
+    <script src="script.js">
+    </script>
+  </body>
+</html>

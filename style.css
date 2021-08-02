@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fantasy", sans-serif;
+}
+
+header {
+  text-align:center;
+  width: 100%;;
+  z-index:1;
+  position:fixed;
+
+}
+.navbar{
+  background:#24252a;
+  height:70px;
+}
+.about{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:120px;
+  transition:all 0.3s ease 0s;
+  height:40px;
+}
+.current{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:150px;
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+  padding:15px;
+  height:40px;
+}
+.journey{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:120px;
+  transition:all 0.3s ease 0s;
+  top:30px;
+  position:relative;
+  height:40px;
+}
+.account{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:120px;
+  transition:all 0.3s ease 0s;
+  line-height:9px;
+
+  height:40px;
+}
+.education{
+  text-decoration:none;
+  color:white;
+  font-family:serif,"Stencil Std";
+  margin:15px;
+  padding:15px;
+  width:120px;
+  display:inline-flex;
+  transition:all 0.3s ease 0s;
+  text-align:center;
+  height:40px;
+}
+.navbar ul{
+  display:inline-flex;
+}
+nav a{
+  font-size:16px;
+}
+nav a:hover{
+  background:linear-gradient(red, yellow);
+  border-radius:3px;
+
+}
+ .dropdown:hover .dropdown-content{
+   display:block;
+   position:absolute;
+ }
+.dropdown-content{
+  display:none;
+  background:#24252a;
+  border:1px solid white;
+  padding:5px;
+  list-style-type:none;
+  position:relative;
+  top:70px;
+}
+div li{
+  padding:20px;
+}
+div a{
+  color:white;
+  text-decoration: none;
+}
+.calculator{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.guide{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.game{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+
+.background {
+  height:100%;
+  width:100%;/*remember what it does*/
+  position: fixed; /*remember what it does*/
+  /* top:100%*/
+  background-image:url(images/trainers.jpg);
+  background-size:cover;
+  background-position:center;
+ /*remember what it does*/
+}
+
+  .content-area {
+    position: relative; /*remember what it does*/
+    padding:40px;
+    top:431px; /*remember what it does*/
+    width:1263px;
+    background-color: #d9e4f5;
+    background-color: #f9c5d1;
+    background: linear-gradient(328deg, #9795ef 48%, #f9c5d1 0%);
+    /*increase 1500 to make webpage longer*/
+    height: 680px;
+  }
+
+.content-area p{
+  font-family:"Stencil Std", "fantasy";
+  font-size:30px;
+}
+.background h2{
+  font-size:70px;
+  position:absolute;
+  top:230px;
+  left:95px;
+ /* Create the gradient. */
+ background-image: linear-gradient(red,yellow);
+ /* Set the background size and repeat properties. */
+ background-size: 100%;
+ background-repeat: repeat;
+ /* Use the text as a mask for the background. */
+ /* This will show the gradient as a text color rather than element bg. */
+ -webkit-background-clip: text; /*without this it will be the background color*/
+ -webkit-text-fill-color: transparent; /*without this the text color will be black*/
+ /*-moz-background-clip: text;   dunno for what
+ -moz-text-fill-color: transparent;*/
+ -webkit-text-stroke: 1px #282828; /*without this text will be slightly blur*/
+  text-shadow: 5px 1px 0px #282828;
+  font-family:"Stencil Std", "fantasy";
+  font-weight:900;
+  overflow:hidden;
+  white-space:nowrap;
+  animation:text 13s steps(31);
+}
+@keyframes text{
+  0%{
+    width:0ch;
+  }
+  50%{
+    width:31ch;
+  }
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+.calendar {
+  width: 45rem;
+  height: 52rem;
+  background-color:#ff9999;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  position:relative;
+  top:40px;
+  left:700px;
+  color:white;
+}
+
+.month {
+  width: 100%;
+  height: 12rem;
+  background-color:  #9795ef ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.month p {
+  font-size: 1.6rem;
+}
+
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(40.2rem / 7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+
+}
+
+.days div:hover:not(.today) {
+  background-color:	 #ff8080;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  background-color:  #ff8080;
+}
+
+/*TABLE*/
+.tableClasses{
+  border-collapse: collapse;
+  font-size: 15px;
+  font-family: sans-serif;
+  width: 630px;
+  height:400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius:5px;
+  position:relative;
+  right:10px;
+  bottom:450px;
+
+}
+thead,tr{
+  background-color: #ffbb99;
+  color: #ffffff;
+  text-align: center;
+  font-family:"Fantasy";
+}
+th,td {
+  padding: 8px;
+}
+.tableClasses tbody tr {
+    border: 1px solid white;
+}
+.tableClasses tbody tr:nth-of-type(even) {
+    background-color:#ff8080;
+}
+
+.tableClasses tbody tr:last-of-type { /*allows you to target the last occurence of an element within its container.*/
+    border: 1px solid white;
+}
+caption{
+  color:white;
+  font-size:20px;
+}
+#tableDay{
+  font-size:25px;
+  padding:0px;
+  background-color: #ff0066;
+}

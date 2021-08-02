@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="Drag and drop">
+
+		<title>Drag and Drop Kids Challenge!</title>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			header {
+			  text-align:center;
+				height: 100px;
+				width: 100%;
+				z-index:1;
+				position: fixed;
+			}
+			.navbar{
+			  background:#24252a;
+			}
+			.about{
+			text-decoration:none;
+			color:white;
+			font-family:serif,"Stencil Std";
+			margin:15px;
+			padding:15px;
+			width:120px;
+			transition:all 0.3s ease 0s;
+			}
+			.current{
+			text-decoration:none;
+			color:white;
+			font-family:serif,"Stencil Std";
+			margin:15px;
+			padding:15px;
+			width:120px;
+			transition:all 0.3s ease 0s;
+			}
+			.classes{
+			text-decoration:none;
+			color:white;
+			font-family:serif,"Stencil Std";
+			margin:15px;
+			padding:15px;
+			width:120px;
+			transition:all 0.3s ease 0s;
+			}
+			.account{
+			text-decoration:none;
+			color:white;
+			font-family:serif,"Stencil Std";
+			margin:15px;
+			padding:15px;
+			width:120px;
+			transition:all 0.3s ease 0s;
+			}
+			.journey{
+			text-decoration:none;
+			color:white;
+			font-family:serif,"Stencil Std";
+			margin:15px;
+			padding:15px;
+			width:120px;
+			display:inline-flex;
+			transition:all 0.3s ease 0s;
+			text-align:center;
+			}
+			.navbar ul{
+			display:inline-flex;
+			}
+			.current{
+			  background:linear-gradient(red, yellow);;
+			  border-radius:3px;
+			  padding:15px;
+			}
+			nav a:hover{
+			  background:linear-gradient(red, yellow);;
+			  border-radius:3px;
+			}
+			 .dropdown:hover .dropdown-content{
+			    display:block;
+			   position:absolute;
+			 }
+			.dropdown-content{
+			  display:none;
+			  background:#24252a;
+			  border:1px solid white;
+			  padding:5px;
+			  list-style-type:none;
+			}
+			div li{
+			  padding:20px;
+			}
+			div a{
+			  color:white;
+			  text-decoration: none;
+			}
+			.calculator{
+			  border-bottom:1px solid white;
+			  padding:20px;
+			  transition:all 0.3s ease 0s;
+			}
+			.guide{
+			  border-bottom:1px solid white;
+			  padding:20px;
+			  transition:all 0.3s ease 0s;
+			}
+			.game{
+			  border-bottom:1px solid white;
+			  padding:20px;
+			  transition:all 0.3s ease 0s;
+			}
+
+			.background {
+				width: 100%; /*remember what it does*/
+				height: 100%; /*remember what it does*/
+				position: fixed; ; /*remember what it does*/
+			  /* top:100%*/
+				background-image:url(images/backgroundgym.jpeg);
+				background-size:cover; /*remember what it does*/
+			  background-position:center; /*remember what it does*/
+			}
+			.background h2{
+			  font-size:80px;
+			  position:absolute;
+			  top:190px;
+			  left:210px;
+			 /* Create the gradient. */
+			 background-image: linear-gradient(#a6c0fe,#f68084);
+			 /* Set the background size and repeat properties. */
+
+			 /* Use the text as a mask for the background. */
+			 /* This will show the gradient as a text color rather than element bg. */
+			 -webkit-background-clip: text; /*without this it will be the background color*/
+			 -webkit-text-fill-color: transparent; /*without this the text color will be black*/
+			 /*-moz-background-clip: text;   dunno for what
+			 -moz-text-fill-color: transparent;*/
+			 -webkit-text-stroke: 2px #282828; /*without this text will be slightly blur*/
+			 	text-shadow: 5px 1px 0px #ffeecc;
+			  font-family:"Stencil Std", "fantasy";
+			  font-weight:900;
+			  overflow:hidden;
+			  white-space:nowrap;
+			  animation:text 13s steps(23);
+			}
+			.content-area {
+			  top:450px;
+			  position:relative;
+				height:80px;
+			}
+			.image{
+		   background-image:url(images/fatguywrk1.gif);
+			 background-repeat:no-repeat;
+			 background-position: bottom 420px right 240px;
+			 background-color:#ff8c1a;
+			}
+/*---DRAG AND DROP------*/
+			.row:after,
+			.hitbox:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			[class^="col-"] {
+				float: left;
+			}
+
+			.col-full {
+				width: 100%;
+			}
+
+			.col-half {
+				width: 50%;
+			}
+
+			.col-quarter {
+				width: 24%;
+				margin: 0.5%;
+				background-color: white;
+			}
+
+			.hitbox {
+				position: relative; /*image relative to each individual box*/
+			}
+
+			.hitbox:before { /* so that the boxes and images all workable*/
+				display: block;
+				content: "";
+				padding-top: 100%;
+			}
+
+			.dropzone {
+				position: absolute; /* images inside boxes*/
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			.answer {  /* the tick and cross image*/
+				width: 25%;
+				height: 25%;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 1;
+			}
+
+			.answer.hide {
+				visibility: hidden; /* so the tick doesnt show*/
+			}
+
+			.dropzone:not(.container) .icon { /* the image after it is dropped into the box it should fill up the size of the box*/
+				width: 100%;
+				height: 100%;
+			}
+			#dropzone-container{ /* height of area where draggables can be dropped back*/
+				height:280px;
+			}
+      #scoreStatement{
+				position:relative;
+				top:10px;
+				right:500px;
+			}
+      #dropzone-holder{ /*Enrtire dop boxes*/
+        position:relative;
+        top:280px;
+        left:10px;
+      }
+
+			.icon { /*size of the draggables*/
+				width: 24%;
+				margin: 0.5%;
+			}
+     .dragcontainer{
+        position:relative;
+        top:210px;
+        left:200px;
+      }
+
+			.dragArea{  /* Entire draggable area*/
+				position:relative;
+			  bottom:500px;
+			 	right:20px;
+
+			}
+
+			#dropzone-arm {
+			background-image: url("images/ArmDropTransparent.png");
+
+			}
+
+			#dropzone-chest {
+			background-image: url("images/ChestDropTransparent.png");
+			}
+
+			#dropzone-abdomen {
+				background-image: url("images/AbdomenDropTransparent.png");
+			}
+
+			#dropzone-leg {
+				background-image: url("images/LegDropTransparent.png");
+
+			}
+			.instructions {
+				text-align: center;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<header>
+	  <nav class="navbar">
+	  <ul>
+	    <a class="about" href="Main.html">About</a>
+	    <a class="current" href="#" >Education</a>
+	    <div class="dropdown">
+	    <a class="journey" href="Journey.html">Journey</a>
+	    <div class="dropdown-content">
+	  <li><a class="calculator" href="#">Calculate BMI</a></li>
+	    <li><a class="guide" href="#">Workout Guides</a></li>
+	    <li><a class='game' href="#">Game</a></li>
+	    </div>
+	  </div>
+	    <a class="classes"href="OnlineClass.html">Book Now</a>
+	    <a class="account" href="Account.html">Sign in/Log in</a>
+	  </ul>
+	</nav>
+	</header>
+	<div class="background">
+	  <h2 class="h2title">Importance Of Exercising</h2>
+	</div>
+	<div class="content-area">
+		<div class="image">
+		<div class="row">
+			<div class="col-full instructions">
+				<h1 id="scoreStatement">Your score is <span id="score">0</span>/4.</h1>
+				<h3>Score will be calculated based on how many icons you got right!</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-half instructions">
+				<h1>Drop the icons into the right place.</h1>
+				<h3>You'll be told whether you get the answer right or wrong.</h3>
+			</div>
+			<div class="col-half instructions">
+				<h1>Drag the icons from the container below.</h1>
+				<h3>You may drag the fruits/vegetables back into this container in case you need to rearrange.</h3>
+
+			</div>
+		</div>
+		<div class="row">
+			<div id="dropzone-holder" class="col-half">
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-arm" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					</div>
+				</div>
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-chest" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					</div>
+				</div>
+
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-abdomen" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					</div>
+				</div>
+
+				<div class="col-quarter hitbox">
+					<img class="answer hide" src="img/correct-green.png" />
+					<div id="dropzone-leg" class="dropzone" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					</div>
+				</div>
+
+			</div>
+			<div class="col-half hitbox" >
+				<div class="dragArea" id="dropzone-container" class="dropzone container" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+					<img  id="icon-arm" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="images/ArmDrag.png">
+					<img  id="icon-chest" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="images/ChestDrag.png">
+					<img  id="icon-abdomen" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="images/AbdomenDrag.png">
+					<img  id="icon-leg" class="icon" draggable="true" ondragstart="return start(event)" ondragend="return end(event)" src="images/LegDrag.png">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<script type="text/javascript">
+			var start = function(e) {
+				e.dataTransfer.effectAllowed = 'move';
+				e.dataTransfer.setData('iconId', e.target.id);
+				e.dataTransfer.setDragImage(e.target, 0, 0);
+				return true;
+			}
+
+			var enter = function(e) {
+				return true;
+			}
+
+			var over = function(e) {
+				var iconId = e.dataTransfer.getData('iconId');
+				var targetId = e.target.id;
+
+				if (targetId.indexOf('icon') > -1) {
+					return true;
+				}
+
+				return false;
+			}
+
+			var drop = function(e) {
+				var iconId = e.dataTransfer.getData('iconId');
+				var icon = document.getElementById(iconId);
+				e.target.appendChild(icon);
+				e.stopPropagation();
+				return false;
+			}
+
+			var end = function(e) {
+				e.dataTransfer.clearData('iconId');
+				return true;
+			}
+
+			var pollResults = function() {
+				var score = document.getElementById('score');
+				score.innerHTML = 0;
+
+				var hitboxes = document.getElementById('dropzone-holder').children;
+
+				for (var i = 0; i < hitboxes.length; ++i) {
+					var hitbox = hitboxes[i];
+					var dropzone = hitbox.lastElementChild;
+
+					if (dropzone.children.length > 0) {
+						dropzone.style.backgroundSize = '0';
+
+						var dropzoneId = dropzone.id;
+						var iconId = dropzone.firstElementChild.id;
+
+						var dropzoneName = dropzoneId.substring(dropzoneId.indexOf('-') + 1);
+						var iconName = iconId.substring(iconId.indexOf('-') + 1);
+
+						dropzone.previousElementSibling.setAttribute('class', 'answer show');
+
+						if (iconName == dropzoneName) {
+							dropzone.previousElementSibling.src = 'img/correct-green.png';
+							score.innerHTML = parseInt(score.innerHTML) + 1;
+						} else {
+							dropzone.previousElementSibling.src = 'img/wrong-red.png';
+						}
+					} else {
+						dropzone.previousElementSibling.setAttribute('class', 'answer hide');
+						dropzone.style.backgroundSize = '100% auto';
+					}
+				}
+
+				if (parseInt(score.innerHTML) == 4) {
+					alert('Congratulations! You won the game!');
+					location.reload();
+				}
+			}
+
+			setInterval(pollResults, 50);
+
+			var shuffleIcons = function() {
+				var dropzoneContainer = document.getElementById('dropzone-container');
+				var icons = dropzoneContainer.children;
+				var fragment = document.createDocumentFragment();
+				while (icons.length) {
+					fragment.appendChild(icons[Math.floor(Math.random() * icons.length)]);
+				}
+				dropzoneContainer.appendChild(fragment);
+			}
+
+			var shuffleDropzones = function() {
+				var dropzoneHolder = document.getElementById('dropzone-holder');
+				var dropzones = dropzoneHolder.children;
+				var fragment = document.createDocumentFragment();
+				while (dropzones.length) {
+					fragment.appendChild(dropzones[Math.floor(Math.random() * dropzones.length)]);
+				}
+				dropzoneHolder.appendChild(fragment);
+			}
+
+			window.onload = function() {
+				shuffleIcons();
+				shuffleDropzones();
+			}
+		</script>
+	</body>
+</html>
