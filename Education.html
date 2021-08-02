@@ -212,6 +212,7 @@ table li{
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  align-items:center;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -227,41 +228,42 @@ table li{
 }
 
 .flip-card-front {
-  background-color: ;
+  background-color:#ffff99;
   color: black;
 }
 
 .flip-card-back {
-  background-color: ;
+  background-color: #eec0c6;
   color: white;
   transform: rotateY(180deg);
+  text-align:center;
+  align-items:center;
 }
-.cards{
+
+.row1{
+  display:flex;
+
+}
+.row2{
   display:flex;
 }
 .card1{
   margin:100px;
-  background-color:#ffb366;
 }
 .card2{
   margin:100px;
-  background-color:#eec0c6;
 }
 .card3{
   margin:100px;
-  background-color:#ffb366;
 }
 .card4{
   margin:80px;
-  background-color:#eec0c6;
 }
 .card5{
   margin:80px;
-  background-color:#ffb366;
 }
 .card6{
   margin:80px;
-  background-color:#eec0c6;
 }
 
 </style>
@@ -276,9 +278,9 @@ table li{
     <div class="dropdown">
     <a class="journey" href="Journey.html">Journey</a>
     <div class="dropdown-content">
-  <li><a class="calculator" href="#">Calculate BMI</a></li>
-    <li><a class="guide" href="#">Workout Guides</a></li>
-    <li><a class='game' href="#">Game</a></li>
+  <li><a class="calculator" href="Journey.html#CalculateBMI">Calculate BMI</a></li>
+    <li><a class="guide" href="Journey.html#Guide">Workout Guides</a></li>
+    <li><a class='game' href="Game.html">Game</a></li>
     </div>
   </div>
     <a class="classes"href="OnlineClass.html">Book Now</a>
@@ -327,13 +329,13 @@ table li{
 
     <!--FLIPCARDS-->
 
-<h1>Card Flip with Text</h1>
-<div class="cards">
+<h1>Hover over to reveal!</h1>
+<div class="row1">
   <div class="card1">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <p>Summary</p>
+      <p id="center">Summary</p>
     </div>
     <div class="flip-card-back">
       <h1>Summary</h1>
@@ -353,7 +355,7 @@ table li{
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <p >Do You Know (Facts)</p>
+      <p id="center">Do You Know (Facts)</p>
     </div>
     <div class="flip-card-back">
       <h1>Fact</h1>
@@ -367,7 +369,7 @@ table li{
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <p>Quote</p>
+      <p id="center">Quote</p>
     </div>
     <div class="flip-card-back">
       <h1>Need Motivation?</h1>
@@ -397,9 +399,9 @@ table li{
   <td><ul><li>High Stepping</li><li>Mountain Climber</li><li>Reverse Crutches</li><li>Leg Raise</li><li>Heel Touch</li><li>Plank</li><li>Heels-to-heaven</li></td><td><img id="abdomen"src="images/abdomen.jpg" height=250 width=365/></td>
 </tr>
 </table>
-</div>
+
 <h1>Test Your Knowledge ; hover over the cards to reveal the answer!</h1>
-<div class="cards">
+<div class="row2">
 <div class="card4">
 <div class="flip-card">
   <div class="flip-card-inner">

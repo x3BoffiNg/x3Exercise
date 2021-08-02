@@ -250,6 +250,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  height:80%;
 }
 
 /* The Close Button */
@@ -277,9 +278,9 @@
       <div class="dropdown">
       <a class="journey" href="Journey.html">Journey</a>
       <div class="dropdown-content">
-    <li><a class="calculator" href="#">Calculate BMI</a></li>
-      <li><a class="guide" href="#">Workout Guides</a></li>
-      <li><a class='game' href="#">Game</a></li>
+    <li><a class="calculator" href="Journey.html#CalculateBMI">Calculate BMI</a></li>
+      <li><a class="guide" href="Journey.html#Guide">Workout Guides</a></li>
+      <li><a class='game' href="Game.html">Game</a></li>
       </div>
     </div>
       <a class="onlineClass"href="OnlineClass">Book Now</a>
@@ -291,18 +292,17 @@
   <div class="col-75">
     <div class="container">
 
+      <!-- The Modal -->
       <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-              <p>Some text in the Modal..</p>
-
+          <p clas="content"></p>
         </div>
 
       </div>
 
-      <form>
 
           <div class="col-50">
             <h3>Selection of class</h3>
@@ -340,7 +340,7 @@
             <label>
               <input type="checkbox" checked="checked" name="sameadr"> Confirm payment
             </label>  <!-- Trigger/Open The Modal -->
-            <button  id="btn">Pay</button>
+            <button  id="myBtn" onclick="get_payment();">Pay</button>
             <!-- The Modal -->
 
           </div>
@@ -350,50 +350,57 @@
   </div>
 
 
-    <script src="script.js">
+    <script>
+    // Get the modal
     var modal = document.getElementById("myModal");
+
     // Get the button that opens the modal
-    var button = document.getElementByClass("btn");
+    var btn = document.getElementById("myBtn");
+
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    // When the user clicks the button, open the modal
 
-    // FORM DATA SUBMISSION PAGE //
-    function result(){
+    function post_payment() {
       var category = document.getElementById("classCategory").value;
       var area = document.getElementById("classType").value;
       var day = document.getElementById("date").value;
       var cardName = document.getElementById("cname").value;
-      var cardnum = document.getElementById("ccum").value;
+      var cardnum = document.getElementById("ccnum").value;
       var cardExpMonth = document.getElementById("expmonth").value;
       var cardExpnYear = document.getElementById("expyear").value;
       var cvv = document.getElementById("cvv").value;
 
       document.write("You have signed up for: "+category+" targetted area is "+area+" on "+day);
-      "<br />"
+      document.write("<br />")
       document.write("Your card name : "+cardName);
-      "<br />"
+      document.write("<br />")
       document.write("Your card number is : "+cardnum);
-      "<br />"
+      document.write("<br />")
       document.write("Your card expiry date is : "+cardExpMonth+"/"+cardExpYear);
-      "<br />"
+      document.write("<br />")
       document.write("Your card cvv is: "+cvv);
+
+    }
+    function get_payment(){
+      document.getElementByClass("content").innerHTML = post_payment();
     }
 
 
-button.onclick =  function() {
-  modal.style.display = "block";
+         // When the user clicks the button, open the modal
+     btn.onclick = function() {
+     modal.style.display = "block";
 }
     // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
     </script>
   </body>
 </html>
