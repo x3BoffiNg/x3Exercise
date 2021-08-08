@@ -6,10 +6,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <title>x3Educate</title>
 <style>
 *{
   padding:0px;
   margin:0px;
+  font-family:"arial";
 }
 header {
   text-align:center;
@@ -24,7 +26,7 @@ header {
 .about{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -33,7 +35,7 @@ transition:all 0.3s ease 0s;
 .current{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -42,7 +44,7 @@ transition:all 0.3s ease 0s;
 .classes{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -51,7 +53,7 @@ transition:all 0.3s ease 0s;
 .account{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -60,25 +62,26 @@ transition:all 0.3s ease 0s;
 .journey{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
-width:120px;
+width:90px;
 display:inline-flex;
 transition:all 0.3s ease 0s;
-text-align:center;
+padding-left:40px;
 }
 .navbar ul{
 display:inline-flex;
 }
 .current{
-  background:linear-gradient(red, yellow);;
+  background:linear-gradient( #eec0c6 , #ffb366);
   border-radius:3px;
   padding:15px;
 }
 nav a:hover{
-  background:linear-gradient(red, yellow);;
+  background:linear-gradient( #eec0c6 , #ffb366);
   border-radius:3px;
+  color: #003d99;
 }
  .dropdown:hover .dropdown-content{
     display:block;
@@ -115,53 +118,69 @@ div a{
 }
 
 .background {
-	width: 100%; /*remember what it does*/
-	height: 100%; /*remember what it does*/
-	position: fixed;  /*remember what it does*/
-  /* top:100%*/
-	background-image:url(images/backgroundgym.jpeg);
-	background-size:cover; /*remember what it does*/
-  background-position:center; /*remember what it does*/
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-image:url(images/blurgym.jpg);
+	background-size:cover;
+  background-position:center;
 }
 .content-area {
-	position: relative; ; /*remember what it does*/
+	position: relative; ;
   padding:40px;
-	top:431px; /*remember what it does*/
+	top:431px;
   background-color: #eec0c6;
   background-image: linear-gradient(328deg,  #ffb366 70%,#eec0c6  0%);
-  /*increase 1500 to make webpage longer*/
-	height:2500px;
+	height:2750px;
   text-align:center;
 }
-table{
+@media only screen and (max-width: 1200px) {
+  .content-area {
+    position: relative;
+    padding:40px;
+    width:1300px;
+    top:431px;
+    background-color: #eec0c6;
+    background-image: linear-gradient(328deg,  #ffb366 70%,#eec0c6  0%);
+    height:2750px;
+    text-align:center;
+  }
+}
+table,tr,td{
 margin-left:auto;
 margin-right:auto;
-border-collapse:collapse;
+border-collapse: collapse;
+border:none;
+}
+
+table li{
+  padding:5px;
+  list-style-position:inside;
+  display:flex;
+  padding-left:120px;
+}
+
+.tableCellColor{
+  background-image:linear-gradient( #eec0c6 , #ffb366);
 }
 .background h2{
   font-size:80px;
   position:absolute;
   top:190px;
-  left:210px;
- /* Create the gradient. */
- background-image: linear-gradient(#a6c0fe,#f68084);
- /* Set the background size and repeat properties. */
+  left:50px;
+ background-image: linear-gradient( #ffb366,#eec0c6 );
  background-size: 100%;
  background-repeat: repeat;
- /* Use the text as a mask for the background. */
- /* This will show the gradient as a text color rather than element bg. */
- -webkit-background-clip: text; /without this it will be the background color/
- -webkit-text-fill-color: transparent; /without this the text color will be black/
- /*-moz-background-clip: text;   dunno for what
- -moz-text-fill-color: transparent;*/
- -webkit-text-stroke: 2px #282828; /*without this text will be slightly blur*/
- 	text-shadow: 5px 1px 0px #ffeecc;
-  font-family:"Stencil Std", "fantasy";
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ -moz-text-fill-color: transparent;
+ -webkit-text-stroke: 1px #282828; 
+	text-shadow: 5px 1px 0px #282828;
+  font-family:"arial";
   font-weight:900;
   overflow:hidden;
   white-space:nowrap;
   animation:text 13s steps(23);
-
 }
 @keyframes text{
   0%{
@@ -171,48 +190,35 @@ border-collapse:collapse;
     width:23ch;
   }
 }
-#title{
-  font-size:25px;
-  padding:10px;
-  font-family:lora;
-  text-align:center;
+
+.educate p{
+  font-family:"arial";
 }
-#benefits li{
-  max-width:800px;
-  display:inline-block;
-}
-li span{
+.educate span{
   font-weight:bold;
-  font-size:16px;
 }
-#titlebenefit{
-  text-decoration:underline;
+.educate{
+  font-size:17px;
 }
 #workoutguide{
   font-size:25px;
-}
-table li{
-  padding:5px;
-  list-style-position:inside;
 }
 
 /*FLIP CARDS*/
 
 .flip-card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  align-items:center;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -225,45 +231,127 @@ table li{
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  font-family:"arial";
+
 }
 
 .flip-card-front {
-  background-color:#ffff99;
-  color: black;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
+  color: white;
+  font-size:30px;
+  font-weight:bold;
+  font-style:italic;
+  font-family:"arial";
 }
 
 .flip-card-back {
-  background-color: #eec0c6;
   color: white;
   transform: rotateY(180deg);
-  text-align:center;
-  align-items:center;
 }
 
 .row1{
   display:flex;
-
 }
-.row2{
-  display:flex;
+.col1{
+  display:inline-block;
+}
+.col2{
+  display:inline-block;
+}
+.col3{
+  display:inline-block;
 }
 .card1{
-  margin:100px;
+  margin:80px;
 }
 .card2{
-  margin:100px;
+  margin:80px;
 }
 .card3{
-  margin:100px;
+  margin:80px;
 }
 .card4{
   margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
 }
 .card5{
   margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
 }
 .card6{
   margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
+}
+.card7{
+  margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
+}
+.card8{
+  margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
+}
+.card9{
+  margin:80px;
+  background-image: linear-gradient( #eec0c6 ,#ffb366);
+}
+.flip-card-front p {
+  padding-top:95px;
+  padding-left:15px;
+  padding-right:15px;
+}
+.flip-card-back p {
+  padding-top:50px;
+}
+.flip-card-back-h1p h1{
+  padding-top:30px;
+}
+.flip-card-back-h1p p{
+  padding-top:35px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.flip-summary-back-h1p h1{
+    padding-top:10px;
+}
+.flip-summary-back-h1p p{
+    padding-top:0px;
+    padding-left:15px;
+    padding-right:15px;
+}
+.row2-card-back-h1p p{
+  padding-top:100px;
+  font-size:30px;
+}
+.row2-card-front-h1p p{
+  padding-top:90px;
+  font-size:20px;
+}
+.row3-card-back-h1p p{
+  padding-top:100px;
+  font-size:30px;
+}
+.row3-card-front-h1p p{
+  padding-top:90px;
+  font-size:20px;
+}
+#HoverTitle1{
+  font-family="arial";
+  font-style:italic;
+  font-style:bold;
+  color:white;
+  background-image: linear-gradient( #ffb366,#eec0c6 );
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #282828;
+ 	text-shadow: 2px 1px 0px #282828;
+}
+.educate{
+  padding-left:150px;
+  padding-right:150px;
+  width:900px;
 }
 
 </style>
@@ -292,44 +380,42 @@ table li{
   <h2 class="h2title">Importance Of Exercising</h2>
 </div>
 <div class="content-area">
-    <h2 id="title">Why exercise?</h2>
+    <h3 id="titlebenefit">Benefits Of Exercising</h3>
     <br />
-    <h3 id="titlebenefit">Benefits</h3>
-    <ul id="benefits">
-      <li>
-        <span>Reduces The Risk Of Heart Diseases.</span> Exercising does <span>NOT</span> only
+    <div class="educate">
+        <p><span>Reduces The Risk Of Heart Diseases.</span> Exercising does <span>NOT</span> only
          strehthen muscles in our body but also help streghten our heart muscles to become more
           efficient in blood circulation throughout the body. The increased blood flow increases
            the oxygen level in the body. This meant that there the chances of contracting heart
            diseases such as high cholesterol, coronary artery disease, and heart attack is lowered.
            Researchers found that heart attack patients who participated in a formal exercise program
-            experienced a reduced death rate of 20 to 25 percent.
-      </li>
-      <li>
-        <span>Controlling & Maintaining Your Weight.</span> Along with diet, exercising plays an
+            experienced a reduced death rate of 20 to 25 percent.</p>
+            <br />
+            <br />
+        <p><span>Controlling & Maintaining Your Weight.</span> Along with diet, exercising plays an
         important role in maintaining your weight and preventing obesity. To maintain your weight,
         the calories you intake must be equal to the energy you burn. If you would like to lose
         weight, the calories intake must be lesser than the energy burned. This can be achieved by
         being consious about what you eat everyday. The amount of calories a particular food have
-        can be checked on the package itself.
-      </li>
-      <li>
-      <span>Improves Mental Health.</span> Exercise releases chemicals like endorphins and serotonin
+        can be checked on the package itself.</p>
+        <br />
+        <br />
+      <p><span>Improves Mental Health.</span> Exercise releases chemicals like endorphins and serotonin
       that can improve your mood. This can help reduce stress and other mental health such as anxiety
-       and depression.
-      </li>
-      <li>
-        <span>Builds Stronger Bones.</span> Exercise can help children and teenagers build strong bones
+       and depression.</p>
+       <br />
+       <br />
+        <p><span>Builds Stronger Bones.</span> Exercise can help children and teenagers build strong bones
         and it also essential for maintaining bone strength when we get older. This is because the bone is a
         living tissue that changes over time in response to the forces placed upon it. Thus when you exercise regularly,
-         your bone adapts by building more bone and becoming denser.
-      </li>
-    </ul>
+         your bone adapts by building more bone and becoming denser.</p>
+  </div>
+    <br />
     <br />
 
     <!--FLIPCARDS-->
 
-<h1>Hover over to reveal!</h1>
+<h1 id="HoverTitle1">Hover over to reveal!</h1>
 <div class="row1">
   <div class="card1">
 <div class="flip-card">
@@ -338,6 +424,7 @@ table li{
       <p id="center">Summary</p>
     </div>
     <div class="flip-card-back">
+      <div class="flip-summary-back-h1p">
       <h1>Summary</h1>
       <p>-Reduces risk of heart diseases</p>
       <br />
@@ -347,6 +434,7 @@ table li{
       <br />
       <p>-Builds stronger bones</p>
     </div>
+    </div>
   </div>
 </div>
 </div>
@@ -355,11 +443,13 @@ table li{
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <p id="center">Do You Know (Facts)</p>
+      <p id="center">Do You Know</p>
     </div>
     <div class="flip-card-back">
+      <div class="flip-card-back-h1p">
       <h1>Fact</h1>
       <p>Skipping dinner doesn't help lose fats</p>
+    </div>
     </div>
   </div>
 </div>
@@ -372,8 +462,10 @@ table li{
       <p id="center">Quote</p>
     </div>
     <div class="flip-card-back">
+      <div class="flip-card-back-h1p">
       <h1>Need Motivation?</h1>
       <p>"Be <b>Stronger</b> than your strongest excuse"</p>
+    </div>
     </div>
   </div>
 </div>
@@ -387,29 +479,33 @@ table li{
 <table class="table" border="1">
 <tr>
   <td><img id="chest"src="images/Upperbody.jpeg" height=250 width=365/></td>
-  <td><ul><li>Standard Push-Up</li><li>Decline Push-Up</li><li>Plyometric Push-Up</li><li>Wide Push-Up</li><li>Shuffle Push-Up</li><li>One Leg Push-Up</li><li>Spiderman Push-Up</li>
+  <td class="tableCellColor"><ul><li>Standard Push-Up</li><li>Decline Push-Up</li><li>Plyometric Push-Up</li><li>Wide Push-Up</li><li>Shuffle Push-Up</li><li>One Leg Push-Up</li><li>Spiderman Push-Up</li>
 <tr>
-  <td><ul><li>Jumping Jacks</li><li>Triceps dip</li><li>Dynamic Chest</li><li>Alternating Hooks</li><li>Up-and-down Plank</li><li>Knee Push-Up</li><li>Chest Press Pulse</li></ul></td>
+  <td class="tableCellColor"><ul><li>Jumping Jacks</li><li>Triceps dip</li><li>Dynamic Chest</li><li>Alternating Hooks</li><li>Up-and-down Plank</li><li>Knee Push-Up</li><li>Chest Press Pulse</li></ul></td>
 <td><img id="arm"src="images/Arm.jpg" height=250 width=365/></td>
 </tr>
 <tr>
-  <td><img id="leg"src="images/Legs.jpg" height=250 width=365/></td><td><ul><li>Squat</li><li>Lunges</li><li>Pistol Squat</li><li>Donkey Kick</li><li>Side Lunges</li><li>Calf raised</li><li>Glute Bridge</li></ul></td>
+  <td><img id="leg"src="images/Legs.jpg" height=250 width=365/></td><td class="tableCellColor"><ul><li>Squat</li><li>Lunges</li><li>Pistol Squat</li><li>Donkey Kick</li><li>Side Lunges</li><li>Calf raised</li><li>Glute Bridge</li></ul></td>
 </tr>
 <tr>
-  <td><ul><li>High Stepping</li><li>Mountain Climber</li><li>Reverse Crutches</li><li>Leg Raise</li><li>Heel Touch</li><li>Plank</li><li>Heels-to-heaven</li></td><td><img id="abdomen"src="images/abdomen.jpg" height=250 width=365/></td>
+  <td class="tableCellColor"><ul><li>High Stepping</li><li>Mountain Climber</li><li>Reverse Crutches</li><li>Leg Raise</li><li>Heel Touch</li><li>Plank</li><li>Heels-to-heaven</li></td><td><img id="abdomen"src="images/abdomen.jpg" height=250 width=365/></td>
 </tr>
 </table>
-
-<h1>Test Your Knowledge ; hover over the cards to reveal the answer!</h1>
-<div class="row2">
+<br />
+<h1 id="HoverTitle1">Test Your Knowledge;hover over the cards to reveal the answer!</h1>
+<div class="col1">
 <div class="card4">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
+      <div class="row2-card-front-h1p">
       <p>Jumping Jacks targets which area?</p>
     </div>
+  </div>
     <div class="flip-card-back">
-      <h1>ARMS</h1>
+        <div class="row2-card-back-h1p">
+      <p>Arms</p>
+    </div>
     </div>
   </div>
 </div>
@@ -420,27 +516,91 @@ table li{
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
+      <div class="row2-card-front-h1p">
       <p>Heels-To-Heaven targets which area?</p>
     </div>
+  </div>
     <div class="flip-card-back">
-      <h1>Abdomen</h1>
+        <div class="row2-card-back-h1p">
+      <p>Abdomen</p>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col2">
+<div class="card6">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="row3-card-front-h1p">
+      <p> Can we skip dinner to lose fats?</p>
+    </div>
+  </div>
+    <div class="flip-card-back">
+        <div class="row2-card-back-h1p">
+      <p>No</p>
+    </div>
     </div>
   </div>
 </div>
 </div>
 
-<div class="card6">
+<div class="card7">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <p> Can we skip dinner to lose fats?</p>
+      <div class="row3-card-front-h1p">
+      <p>Lunges targets which area?</p>
     </div>
+  </div>
     <div class="flip-card-back">
-      <h1>No</h1>
+        <div class="row3-card-back-h1p">
+      <p>Legs</p>
+    </div>
     </div>
   </div>
 </div>
 </div>
 </div>
+
+<div class="col3">
+<div class="card8">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="row3-card-front-h1p">
+      <p>High stepping targets which area?</p>
+    </div>
+  </div>
+    <div class="flip-card-back">
+        <div class="row3-card-back-h1p">
+      <p>Abdomen</p>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="card9">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="row3-card-front-h1p">
+      <p>Glute bridge targets which area?</p>
+    </div>
+  </div>
+    <div class="flip-card-back">
+    <div class="row3-card-back-h1p">
+      <p>Legs</p>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>

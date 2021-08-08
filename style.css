@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Fantasy", sans-serif;
+  font-family:"arial";
 }
 
 header {
@@ -14,65 +14,64 @@ header {
 }
 .navbar{
   background:#24252a;
-  height:70px;
+  height:80px;
 }
 .about{
   text-decoration:none;
   color:white;
-  font-family:serif,"Stencil Std";
+  font-family:"arial";
   margin:15px;
   padding:15px;
   width:120px;
   transition:all 0.3s ease 0s;
-  height:40px;
+  height:50px;
 }
 .current{
   text-decoration:none;
   color:white;
-  font-family:serif,"Stencil Std";
+  font-family:"arial";
   margin:15px;
   padding:15px;
   width:150px;
-  background:linear-gradient(red, yellow);
+  background:linear-gradient(#9795ef, #f9c5d1);
   border-radius:3px;
   padding:15px;
-  height:40px;
+  height:50px;
 }
 .journey{
   text-decoration:none;
   color:white;
-  font-family:serif,"Stencil Std";
+  font-family:"arial";
   margin:15px;
   padding:15px;
   width:120px;
   transition:all 0.3s ease 0s;
   top:30px;
   position:relative;
-  height:40px;
+  height:50px;
 }
 .account{
   text-decoration:none;
   color:white;
-  font-family:serif,"Stencil Std";
+  font-family:"arial";
   margin:15px;
   padding:15px;
-  width:120px;
+  width:150px;
   transition:all 0.3s ease 0s;
-  line-height:9px;
-
-  height:40px;
+  line-height:20px;
+  height:50px;
 }
 .education{
   text-decoration:none;
   color:white;
-  font-family:serif,"Stencil Std";
+  font-family:"arial";
   margin:15px;
   padding:15px;
   width:120px;
   display:inline-flex;
   transition:all 0.3s ease 0s;
   text-align:center;
-  height:40px;
+  height:50px;
 }
 .navbar ul{
   display:inline-flex;
@@ -81,8 +80,9 @@ nav a{
   font-size:16px;
 }
 nav a:hover{
-  background:linear-gradient(red, yellow);
+  background:linear-gradient(#9795ef, #f9c5d1);
   border-radius:3px;
+  color: #003d99;
 
 }
  .dropdown:hover .dropdown-content{
@@ -123,50 +123,41 @@ div a{
 
 .background {
   height:100%;
-  width:100%;/*remember what it does*/
-  position: fixed; /*remember what it does*/
-  /* top:100%*/
-  background-image:url(images/trainers.jpg);
+  width:100%;
+  position: fixed;
+  background-image:url(images/blurtrainer.jpg);
   background-size:cover;
   background-position:center;
- /*remember what it does*/
 }
 
   .content-area {
-    position: relative; /*remember what it does*/
+    position: relative;
     padding:40px;
-    top:431px; /*remember what it does*/
+    top:431px;
     width:1263px;
     background-color: #d9e4f5;
     background-color: #f9c5d1;
     background: linear-gradient(328deg, #9795ef 48%, #f9c5d1 0%);
-    /*increase 1500 to make webpage longer*/
     height: 680px;
   }
 
 .content-area p{
-  font-family:"Stencil Std", "fantasy";
+  font-family:"arial";
   font-size:30px;
 }
 .background h2{
-  font-size:70px;
+  font-size:60px;
   position:absolute;
-  top:230px;
-  left:95px;
- /* Create the gradient. */
- background-image: linear-gradient(red,yellow);
- /* Set the background size and repeat properties. */
- background-size: 100%;
- background-repeat: repeat;
- /* Use the text as a mask for the background. */
- /* This will show the gradient as a text color rather than element bg. */
- -webkit-background-clip: text; /*without this it will be the background color*/
- -webkit-text-fill-color: transparent; /*without this the text color will be black*/
- /*-moz-background-clip: text;   dunno for what
- -moz-text-fill-color: transparent;*/
- -webkit-text-stroke: 1px #282828; /*without this text will be slightly blur*/
+  top:200px;
+  left:80px;
+  background-image: linear-gradient(#9795ef, #f9c5d1);
+  background-size: 100%;
+  background-repeat: repeat;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ -webkit-text-stroke: 1px #282828;
   text-shadow: 5px 1px 0px #282828;
-  font-family:"Stencil Std", "fantasy";
+  font-family:"arial";
   font-weight:900;
   overflow:hidden;
   white-space:nowrap;
@@ -283,7 +274,7 @@ html {
 .tableClasses{
   border-collapse: collapse;
   font-size: 15px;
-  font-family: sans-serif;
+  font-family:"arial";
   width: 630px;
   height:400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -293,11 +284,14 @@ html {
   bottom:450px;
 
 }
+table a{
+  text-decoration:underline;
+}
 thead,tr{
   background-color: #ffbb99;
   color: #ffffff;
   text-align: center;
-  font-family:"Fantasy";
+  font-family:"arial";
 }
 th,td {
   padding: 8px;
@@ -320,4 +314,60 @@ caption{
   font-size:25px;
   padding:0px;
   background-color: #ff0066;
+}
+@media only screen and (max-width: 700px) {
+  .calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color:#ff9999;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    position:relative;
+    top:655px;
+    left:30px;
+    color:white;
+  }
+  .tableClasses{
+    border-collapse: collapse;
+    font-size: 15px;
+    font-family:"arial";
+    width: 500px;
+    height:400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius:5px;
+    position:relative;
+    left:20px;
+    bottom:450px;
+  }
+  .content-area {
+    position: relative; /*remember what it does*/
+    padding:40px;
+    top:431px; /*remember what it does*/
+    width:1263px;
+    background-color: #d9e4f5;
+    background-color: #f9c5d1;
+    background: linear-gradient(328deg, #9795ef 48%, #f9c5d1 0%);
+    /*increase 1500 to make webpage longer*/
+    height: 1300px;
+    width:700px;
+  }
+  .background h2{
+    font-size:60px;
+    width:600px;
+    position:absolute;
+    top:200px;
+    left:80px;
+   background-image: linear-gradient(#9795ef, #f9c5d1);
+   background-size: 100%;
+   background-repeat: repeat;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke: 1px #282828; 
+    text-shadow: 5px 1px 0px #282828;
+    font-family:"arial";
+    font-weight:900;
+    overflow:hidden;
+    white-space:nowrap;
+    animation:text 13s steps(31);
+  }
+
 }

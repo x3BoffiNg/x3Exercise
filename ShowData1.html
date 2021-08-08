@@ -1,0 +1,244 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>x3PaymentData</title>
+<style>
+*{
+  padding:0px;
+  margin:0px;
+  font-family:"arial";
+}
+header {
+  text-align:center;
+  z-index:1;
+	position: fixed;
+}
+.navbutton{
+  background:#24252a;
+  height:80px;
+  width:1300px;;
+}
+
+.about{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.account{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:150px;
+line-height:20px;
+transition:all 0.3s ease 0s;
+}
+.calendar{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.education{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.journey{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+padding-left:45px;
+width:100px;
+display:inline-flex;
+transition:all 0.3s ease 0s;
+text-align:center;
+}
+
+.navbutton ul{
+display:inline-flex;
+}
+
+nav a:hover{
+  background:linear-gradient(#84fab0,#8fd3f4);
+  border-radius:3px;
+  text-decoration:none;
+  height:20px;
+  color: #003d99;
+}
+ .dropdown:hover .dropdown-content{
+   display:block;
+   position:absolute;
+   padding:15px;
+   height:170px;
+   width:160px;
+ }
+ .dropdown-content{
+   display:none;
+   background:#24252a;
+   border:1px solid white;
+   list-style-type:none;
+ }
+
+ div li{
+   padding:15px;
+ }
+
+ div li a{
+   color:white;
+   text-decoration: none;
+ }
+ .dropbutton{
+   border-bottom:1px solid white;
+   padding:5px;
+   transition:all 0.3s ease 0s;
+   width:150px;
+ }
+ body{
+   background:linear-gradient(#84fab0,#8fd3f4);
+   height:10px;
+ }
+article {
+  position:relative;
+  left:330px;
+  top:140px;
+	font-family:"arial";
+	font-size:20px;
+	padding-top:40px;
+  padding-left:80px;
+  padding-bottom:40px;
+	border-radius:50px 10px 100px 0px;
+	background:linear-gradient(#fbc2eb,#a6c1ee);
+	width:550px;
+  box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2);
+}
+
+ h1 { text-align:center }
+
+.blank {
+	font-weight:900;
+}
+@media only screen and (max-width: 800px) {
+  article {
+    position:relative;
+    left:10px;
+    top:120px;
+  	font-family:"arial";
+  	font-size:20px;
+  	padding-top:40px;
+    padding-left:80px;
+    padding-bottom:40px;
+  	border-radius:50px 10px 100px 0px;
+  	background:linear-gradient(#fbc2eb,#a6c1ee);
+  	width:450px;
+    box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2);
+  }
+}
+</style>
+</head>
+<body>
+<script>
+
+var formData = location.search;
+formData = formData.substring(1, formData.length);
+while (formData.indexOf("+") != -1) {
+	formData = formData.replace("+", " ");
+}
+formData = unescape(formData);
+var formArray = formData.split("&");
+var para=new Array();
+
+</script>
+
+    <header>
+   <nav class="navbutton">
+   <ul>
+     <a class="about" href="index.html">About</a>
+     <a class="education" href="Education.html" >Education</a>
+     <div class="dropdown">
+     <a class="journey" href="Journey.html">Journey</a>
+     <div class="dropdown-content">
+   <li><a class="dropbutton" href="Journey.html#CalculateBMI">Calculate BMI</a></li>
+     <li><a class="dropbutton" href="Journey.html#Guide">Workout Guides</a></li>
+     <li><a class='dropbutton' href="Game.html">Game</a></li>
+     </div>
+   </div>
+     <a class="calendar"href="OnlineClass.html">Book Now</a>
+     <a class="account" href="Account.html">Sign in/Log in</a>
+
+   </ul>
+  </nav>
+  </header>
+
+<article>
+	<p>You have signed up for the <b><span id="category" ></span></b> category</p>
+	 <br />
+	 <p> The targetted area is <b><span id="area" ></span></b></p>
+	 <br />
+	 <p>The class would be on <b><span id="date" ></span></b></p>
+	 <br />
+	 <p>The name on your credit card is <b><span id="cardName"></span></b></p>
+	 <br />
+	 <p>Your credit card number is <b><span id="cardNum" ></span></b></p>
+	 <br />
+	 <p>Your credit card expiry date is <b></b><span id="cardExp" ></span></b></p>
+	 <br />
+	 <p>Your credit card CVV is <b><span id="cvv" ></span></b></p>
+   <br />
+   <p>We will contact you for the upcoming class you signed-up through <b><span id="contact"></span></b></p>
+
+</article>
+<script>
+for (var i=0; i < formArray.length; ++i) {
+
+	para=formArray[i].split("=");
+
+	switch (para[0]) {
+
+		case "category":
+					document.getElementById("category").innerHTML=para[1];
+					break;
+		case "area":
+					document.getElementById("area").innerHTML=para[1];
+					break;
+		case "date":
+					document.getElementById("date").innerHTML=para[1];
+					break;
+		case "cardName":
+					document.getElementById("cardName").innerHTML=para[1];
+					break;
+		case "cardNum":
+					document.getElementById("cardNum").innerHTML=para[1];
+					break;
+		case "cardExp":
+					document.getElementById("cardExp").innerHTML=para[1];
+					break;
+		case "cvv":
+					document.getElementById("cvv").innerHTML=para[1];
+					break;
+    case "contact":
+          document.getElementById("contact").innerHTML=para[1];
+          break;
+
+    }
+
+}
+
+</script>
+</body>
+</html>

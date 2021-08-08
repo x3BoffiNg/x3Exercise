@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>x3Account</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,6 +12,7 @@
 *{
   padding:0px;
   margin:0px;
+  font-family:"arial";
 }
 header {
   text-align:center;
@@ -21,31 +22,38 @@ header {
 .navbutton{
   background:#24252a;
   height:80px;
-  width:1300px;;
+  width:1300px;
 }
 
 .about{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
 transition:all 0.3s ease 0s;
 }
 .current{
+background:linear-gradient(#a6c0fe,#f68084);
+border-radius:3px;
+height:50px;
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
-width:120px;
+width:150px;
 transition:all 0.3s ease 0s;
 }
 .classes{
+border-radius:3px;
+padding:15px;
+height:50px;
+line-height:20px;
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -54,7 +62,7 @@ transition:all 0.3s ease 0s;
 .education{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
 width:120px;
@@ -63,9 +71,10 @@ transition:all 0.3s ease 0s;
 .journey{
 text-decoration:none;
 color:white;
-font-family:serif,"Stencil Std";
+font-family:"arial";
 margin:15px;
 padding:15px;
+padding-left:30px;
 width:120px;
 display:inline-flex;
 transition:all 0.3s ease 0s;
@@ -75,31 +84,26 @@ text-align:center;
 .navbutton ul{
 display:inline-flex;
 }
-.current{
-  background:linear-gradient(red, yellow);
-  border-radius:3px;
-  padding:15px;
-  height:50px;
-  line-height:10px;
-}
+
 nav a:hover{
-  background:linear-gradient(red, yellow);
+  background:linear-gradient(#a6c0fe,#f68084);
   border-radius:3px;
   text-decoration:none;
   height:50px;
+  color: #003d99;
 }
  .dropdown:hover .dropdown-content{
    display:block;
    position:absolute;
    height:190px;
-   width:180px;
+   width:200px;
  }
  .dropdown-content{
    display:none;
    background:#24252a;
    border:1px solid white;
    list-style-type:none;
-   font-family:"Fantasy";
+   font-family:"arial";
    margin-bottom:2px;
    margin-top:2px;
    position:relative;
@@ -115,38 +119,39 @@ nav a:hover{
  }
  .dropbutton{
    border-bottom:1px solid white;
-   padding:5px;
+   padding:20px;
    transition:all 0.3s ease 0s;
-   height:50px;
+   height:100px;
+   width:150px;
    margin:1px;
  }
 
 body{
   background:linear-gradient(#a6c0fe,#f68084);
-  height:610px;
+  height:680px;
 }
 .login{
   position:relative;
   top:150px;
   left:150px;
-  height:410px;
+  height:480px;
   width:400px;
   background:linear-gradient(#84fab0,#8fd3f4);
   border-radius:10px;
   padding:10px;
-  font-family:"Fantasy";
+  font-family:"arial";
   color:white;
 }
 .signin{
   position:relative;
-  bottom:255px;
+  bottom:330px;
   left:700px;
-  height:410px;
+  height:480px;
   width:400px;
   background:linear-gradient(#fbc2eb,#a6c1ee);
   border-radius:10px;
   padding:10px;
-  font-family:"Fantasy";
+  font-family:"arial";
   color:white;
 }
 
@@ -174,8 +179,41 @@ body{
 .inputForm{
   font-size:30px;
   color:white;
-  font-family:"Fantasy";
+  font-family:"arial";
   text-align:center;
+}
+#remember{
+  padding-left:20px;
+}
+@media only screen and (max-width: 600px) {
+  .login{
+    position:relative;
+    top:150px;
+    left:50px;
+    height:480px;
+    width:400px;
+    background:linear-gradient(#84fab0,#8fd3f4);
+    border-radius:10px;
+    padding:10px;
+    font-family:"arial";
+    color:white;
+  }
+  .signin{
+    position:relative;
+    top:200px;
+    left:50px;
+    height:480px;
+    width:400px;
+    background:linear-gradient(#fbc2eb,#a6c1ee);
+    border-radius:10px;
+    padding:10px;
+    font-family:"arial";
+    color:white;
+  }
+  body{
+    background:linear-gradient(#a6c0fe,#f68084);
+    height:1250px;
+  }
 }
 </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -207,12 +245,10 @@ body{
 
 <body>
     <!---GRID-->
-
-
    <!--LOGIN FORM-->
 <div class="login">
 <div class="container">
-  <form action="/action_page.php" class="needs-validation" novalidate>
+  <form method="get" action="" onsubmit="return login(this);" class="needs-validation" novalidate>
     <div class="form-group">
       <p class="inputForm">Login</p>
       <label for="uname">Username:</label>
@@ -226,13 +262,7 @@ body{
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
-    <div class="form-group form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember" required> I agree othe terms and condition.
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Check this checkbox to continue.</div>
-      </label>
-    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
@@ -244,9 +274,9 @@ body{
 
    <div class="signin">
    <div class="container">
-     <form action="/action_page.php" class="needs-validation" novalidate>
+     <form  method="get" action="" onsubmit="return store(this);" class="needs-validation" novalidate>
        <div class="form-group">
-           <p class="inputForm">Signin</p>
+           <p class="inputForm">SignUp</p>
          <label for="uname">Username:</label>
          <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
          <div class="valid-feedback">Valid.</div>
@@ -258,13 +288,11 @@ body{
          <div class="valid-feedback">Valid.</div>
          <div class="invalid-feedback">Please fill out this field.</div>
        </div>
-       <div class="form-group form-check">
-         <label class="form-check-label">
-           <input class="form-check-input" type="checkbox" name="remember" required> I agree on the terms and condition.
-           <div class="valid-feedback">Valid.</div>
-           <div class="invalid-feedback">Check this checkbox to continue.</div>
+         <label id="remember" class="form-check-label">
+           <input  class="form-check-input" type="checkbox" name="remember" required> Remember Me
          </label>
-       </div>
+         <br />
+         <br />
        <button type="submit" class="btn btn-primary">Submit</button>
      </form>
    </div>
@@ -289,6 +317,32 @@ body{
     });
   }, false);
 })();
+
+//LOCAL STORAGE//
+//function to store user name and password
+   function store(theForm) {
+    var inputUsername= theForm["uname"];
+    var inputPassword= theForm["pwd"];
+    localStorage.setItem("username", inputUsername.value);
+    localStorage.setItem("password", inputPassword.value);
+    alert("New here? Welcome " + localStorage.getItem('username') + "!");
+    return false;
+   } // end store()
+
+//function to sign in
+   function login(theForm) {
+    var inputUsername = theForm["uname"];
+    var inputPassword = theForm["pwd"];
+    var username = inputUsername.value;
+    var password = inputPassword.value;
+    if ((username == localStorage.getItem('username')) && (password == localStorage.getItem('password'))) {
+     alert("Welcome " + localStorage.getItem('username') + "!");
+      }
+    else {
+     alert("Invalid Log-in! You don't seem to have an account :<");
+    }
+    return false;
+   } // end login()
 </script>
 
 </body>

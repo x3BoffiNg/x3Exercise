@@ -5,274 +5,299 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="description" content="Drag and drop">
 
-		<title>Drag and Drop Kids Challenge!</title>
+		<title>x3Game</title>
 
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-			}
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
 
-			header {
-			  text-align:center;
-				height: 100px;
-				width: 100%;
-				z-index:1;
-				position: fixed;
-			}
-			.navbar{
-			  background:#24252a;
-			}
-			.about{
-			text-decoration:none;
-			color:white;
-			font-family:serif,"Stencil Std";
-			margin:15px;
-			padding:15px;
-			width:120px;
-			transition:all 0.3s ease 0s;
-			}
-			.current{
-			text-decoration:none;
-			color:white;
-			font-family:serif,"Stencil Std";
-			margin:15px;
-			padding:15px;
-			width:120px;
-			transition:all 0.3s ease 0s;
-			}
-			.classes{
-			text-decoration:none;
-			color:white;
-			font-family:serif,"Stencil Std";
-			margin:15px;
-			padding:15px;
-			width:120px;
-			transition:all 0.3s ease 0s;
-			}
-			.account{
-			text-decoration:none;
-			color:white;
-			font-family:serif,"Stencil Std";
-			margin:15px;
-			padding:15px;
-			width:120px;
-			transition:all 0.3s ease 0s;
-			}
-			.journey{
-			text-decoration:none;
-			color:white;
-			font-family:serif,"Stencil Std";
-			margin:15px;
-			padding:15px;
-			width:120px;
-			display:inline-flex;
-			transition:all 0.3s ease 0s;
-			text-align:center;
-			}
-			.navbar ul{
-			display:inline-flex;
-			}
-			.current{
-			  background:linear-gradient(red, yellow);;
-			  border-radius:3px;
-			  padding:15px;
-			}
-			nav a:hover{
-			  background:linear-gradient(red, yellow);;
-			  border-radius:3px;
-			}
-			 .dropdown:hover .dropdown-content{
-			    display:block;
-			   position:absolute;
-			 }
-			.dropdown-content{
-			  display:none;
-			  background:#24252a;
-			  border:1px solid white;
-			  padding:5px;
-			  list-style-type:none;
-			}
-			div li{
-			  padding:20px;
-			}
-			div a{
-			  color:white;
-			  text-decoration: none;
-			}
-			.calculator{
-			  border-bottom:1px solid white;
-			  padding:20px;
-			  transition:all 0.3s ease 0s;
-			}
-			.guide{
-			  border-bottom:1px solid white;
-			  padding:20px;
-			  transition:all 0.3s ease 0s;
-			}
-			.game{
-			  border-bottom:1px solid white;
-			  padding:20px;
-			  transition:all 0.3s ease 0s;
-			}
+header {
+  text-align:center;
+	height: 100px;
+	width: 100%;
+	z-index:1;
+	position: fixed;
+}
 
-			.background {
-				width: 100%; /*remember what it does*/
-				height: 100%; /*remember what it does*/
-				position: fixed; ; /*remember what it does*/
-			  /* top:100%*/
-				background-image:url(images/backgroundgym.jpeg);
-				background-size:cover; /*remember what it does*/
-			  background-position:center; /*remember what it does*/
-			}
-			.background h2{
-			  font-size:80px;
-			  position:absolute;
-			  top:190px;
-			  left:210px;
-			 /* Create the gradient. */
-			 background-image: linear-gradient(#a6c0fe,#f68084);
-			 /* Set the background size and repeat properties. */
+.navbar{
+  background:#24252a;
+}
+.about{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.current{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.classes{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.account{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:120px;
+transition:all 0.3s ease 0s;
+}
+.journey{
+text-decoration:none;
+color:white;
+font-family:"arial";
+margin:15px;
+padding:15px;
+width:100px;
+display:inline-flex;
+transition:all 0.3s ease 0s;
+text-align:center;
+padding-left:40px;
+}
+.navbar ul{
+display:inline-flex;
+}
+.current{
+	background-color: #abe9cd;
+  background: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+  border-radius:3px;
+  padding:15px;
+}
+nav a:hover{
+  background: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+  border-radius:3px;
+	color:#660066;
+}
+ .dropdown:hover .dropdown-content{
+   display:block;
+   position:absolute;
+ }
+.dropdown-content{
+  display:none;
+  background:#24252a;
+  border:1px solid white;
+  padding:5px;
+  list-style-type:none;
+	font-family:"arial";
+}
+div li{
+  padding:20px;
+}
+div a{
+  color:white;
+  text-decoration: none;
+}
+.calculator{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.guide{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
+.game{
+  border-bottom:1px solid white;
+  padding:20px;
+  transition:all 0.3s ease 0s;
+}
 
-			 /* Use the text as a mask for the background. */
-			 /* This will show the gradient as a text color rather than element bg. */
-			 -webkit-background-clip: text; /*without this it will be the background color*/
-			 -webkit-text-fill-color: transparent; /*without this the text color will be black*/
-			 /*-moz-background-clip: text;   dunno for what
-			 -moz-text-fill-color: transparent;*/
-			 -webkit-text-stroke: 2px #282828; /*without this text will be slightly blur*/
-			 	text-shadow: 5px 1px 0px #ffeecc;
-			  font-family:"Stencil Std", "fantasy";
-			  font-weight:900;
-			  overflow:hidden;
-			  white-space:nowrap;
-			  animation:text 13s steps(23);
-			}
-			.content-area {
-			  top:450px;
-			  position:relative;
-				height:80px;
-			}
-			.image{
-		   background-image:url(images/fatguywrk1.gif);
-			 background-repeat:no-repeat;
-			 background-position: bottom 420px right 240px;
-			 background-color:#ff8c1a;
-			}
+.background {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-image:url(images/gameBackground.jpg);
+	background-size:cover;
+  background-position:center;
+}
+.background h2{
+  font-size:80px;
+  position:absolute;
+  top:190px;
+  left:310px;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: black;
+ -webkit-text-stroke: 3px white;
+  font-family:"arial";
+  font-weight:900;
+}
+.content-area {
+  top:450px;
+  position:relative;
+}
+.image{
+ background-image:url(images/fatguywrk1.gif);
+ background-repeat:no-repeat;
+ background-position: bottom 420px right 240px;
+ background-color:#ff8c1a;
+}
+@media only screen and (max-width: 900px) {
+  .image {
+		background-image:url(images/fatguywrk1.gif);
+	  background-repeat:no-repeat;
+	  background-position: bottom 50px left 1px;
+	  background-color:#ff8c1a;
+  }
+	.dragArea{  /* Entire draggable area*/
+		position:relative;
+	  top:80px;
+	 	right:500px;
+	}
+
+}
 /*---DRAG AND DROP------*/
-			.row:after,
-			.hitbox:after {
-				content: "";
-				display: table;
-				clear: both;
-			}
+.row:after,
+.hitbox:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
-			[class^="col-"] {
-				float: left;
-			}
+[class^="col-"] {
+	float: left;
+}
 
-			.col-full {
-				width: 100%;
-			}
+.col-full {
+	width: 100%;
+}
 
-			.col-half {
-				width: 50%;
-			}
+.col-half {
+	width: 50%;
+}
 
-			.col-quarter {
-				width: 24%;
-				margin: 0.5%;
-				background-color: white;
-			}
+.col-quarter {
+	width: 24%;
+	margin: 0.5%;
+	background-color: white;
+}
 
-			.hitbox {
-				position: relative; /*image relative to each individual box*/
-			}
+.hitbox {
+	position: relative; /*image relative to each individual box*/
+}
 
-			.hitbox:before { /* so that the boxes and images all workable*/
-				display: block;
-				content: "";
-				padding-top: 100%;
-			}
+.hitbox:before { /* so that the boxes and images all workable*/
+	display: block;
+	content: "";
+	padding-top: 100%;
+}
 
-			.dropzone {
-				position: absolute; /* images inside boxes*/
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-			}
+.dropzone {
+	position: absolute; /* images inside boxes*/
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 
-			.answer {  /* the tick and cross image*/
-				width: 25%;
-				height: 25%;
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				z-index: 1;
-			}
+.answer {  /* the tick and cross image*/
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+}
 
-			.answer.hide {
-				visibility: hidden; /* so the tick doesnt show*/
-			}
+.answer.hide {
+	visibility: hidden; /* so the tick doesnt show*/
+}
 
-			.dropzone:not(.container) .icon { /* the image after it is dropped into the box it should fill up the size of the box*/
-				width: 100%;
-				height: 100%;
-			}
-			#dropzone-container{ /* height of area where draggables can be dropped back*/
-				height:280px;
-			}
-      #scoreStatement{
-				position:relative;
-				top:10px;
-				right:500px;
-			}
-      #dropzone-holder{ /*Enrtire dop boxes*/
-        position:relative;
-        top:280px;
-        left:10px;
-      }
+.dropzone:not(.container) .icon { /* the image after it is dropped into the box it should fill up the size of the box*/
+	width: 100%;
+	height: 100%;
+}
+#dropzone-container{ /* height of area where draggables can be dropped back*/
+	height:280px;
+}
+#scoreStatement{
+	position:relative;
+	top:10px;
+	right:500px;
+}
+#dropzone-holder{ /*Enrtire dop boxes*/
+  position:relative;
+  top:280px;
+  left:10px;
+}
 
-			.icon { /*size of the draggables*/
-				width: 24%;
-				margin: 0.5%;
-			}
-     .dragcontainer{
-        position:relative;
-        top:210px;
-        left:200px;
-      }
+.icon { /*size of the draggables*/
+	width: 24%;
+	margin: 0.5%;
+}
+.dragcontainer{
+  position:relative;
+  top:210px;
+  left:200px;
+}
 
-			.dragArea{  /* Entire draggable area*/
-				position:relative;
-			  bottom:500px;
-			 	right:20px;
+.dragArea{  /* Entire draggable area*/
+	position:relative;
+  bottom:500px;
+ 	right:20px;
 
-			}
+}
 
-			#dropzone-arm {
-			background-image: url("images/ArmDropTransparent.png");
+#dropzone-arm {
+	background-image: url("images/ArmDropTransparent.png");
 
-			}
+}
 
-			#dropzone-chest {
-			background-image: url("images/ChestDropTransparent.png");
-			}
+#dropzone-chest {
+	background-image: url("images/ChestDropTransparent.png");
+}
 
-			#dropzone-abdomen {
-				background-image: url("images/AbdomenDropTransparent.png");
-			}
+#dropzone-abdomen {
+	background-image: url("images/AbdomenDropTransparent.png");
+}
 
-			#dropzone-leg {
-				background-image: url("images/LegDropTransparent.png");
+#dropzone-leg {
+	background-image: url("images/LegDropTransparent.png");
 
-			}
-			.instructions {
-				text-align: center;
-			}
-
-		</style>
+}
+.instructions {
+	text-align: center;
+}
+#scoreStatement{
+	position:relative;
+	top:200px;
+	right:200px;
+	color:white;
+	font-family:"arial";
+}
+#dropTitle{
+	position:relative;
+	top:260px;
+	right:50px;
+	color:white;
+	font-family:"arial";
+}
+#dragTitle{
+	position:relative;
+	top:120px;
+	right:10px;
+	color:white;
+	font-family:"arial";
+}
+</style>
 	</head>
 
 	<body>
@@ -302,16 +327,14 @@
 		<div class="row">
 			<div class="col-full instructions">
 				<h1 id="scoreStatement">Your score is <span id="score">0</span>/4.</h1>
-				<h3>Score will be calculated based on how many icons you got right!</h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-half instructions">
-				<h1>Drop the icons into the right place.</h1>
-				<h3>You'll be told whether you get the answer right or wrong.</h3>
+				<h1 id="dropTitle">Drop Here</h1>
 			</div>
 			<div class="col-half instructions">
-				<h1>Drag the icons from the container below.</h1>
+				<h1 id="dragTitle">Drag Here</h1>
 				<h3></h3>
 
 			</div>
@@ -423,10 +446,6 @@
 					}
 				}
 
-				if (parseInt(score.innerHTML) == 4) {
-					alert('Congratulations! You won the game!');
-					location.reload();
-				}
 			}
 
 			setInterval(pollResults, 50);
